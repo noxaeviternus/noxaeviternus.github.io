@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAHP 555</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    html {
+      transition: color 300ms, background-color 300ms !important;
+    }
+    html[data-theme='dark'] {
+      filter: invert(1) hue-rotate(180deg) !important;
+    }
+    .divide-wrapper div {
+      border-top: 2px solid #e2e2e2;
+    }
+	.checkbox {
+		width: 300px;
+		}
+	
+	#checkbox-group {
+	 columns: 3;
+     -webkit-columns: 3;
+     width: 100%;
+	 }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <h1 class="title" style="text-align: center;">SAHP 555</h1>
+      <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
+      <br>
+      <br>
+      <form id="form">
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">KAZA BİLGİLERİ</h1>
+          <br>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">RAPOR NO</label>
+              <input class="input" type="text" placeholder="Text input" name="rapor_no">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">MEMUR SERI NO</label>
+              <input class="input" type="text" placeholder="Text input" name="seri_no">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">DURUM KODU</label>
+              <input class="input" type="text" placeholder="Text input" name="durum_kodu">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">VUR VE KAÇ</label>
+              <input class="input" type="text" placeholder="Text input" name="vur_kac">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">YARALI/ÖLÜ SAYISI</label>
+              <input class="input" type="text" placeholder="Text input" name="yarali_olu">
+            </div>
+          </div>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">KAZA LOKASYONU</label>
+              <input class="input" type="text" placeholder="Text input" name="kaza_lok">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">KAZA TARİHİ</label>
+              <input class="input" type="text" placeholder="Text input" name="kaza_tar">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">KAZA SAATİ</label>
+              <input class="input" type="text" placeholder="Text input" name="kaza_sa">
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>TARAF 1:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="bsur" value="bsur">
+                  SÜRÜCÜ
+                </label>
+                <label class="radio">
+                  <input type="radio" name="byay" value="byay">
+                  YAYA
+                </label>
+                <label class="radio">
+                  <input type="radio" name="bsab" value="bsab">
+                  SABİT ARAÇ
+                </label>
+                <label class="radio">
+                  <input type="radio" name="bdi" value="bdi">
+                  DİĞER
+                </label>
+              </div>
+            </fieldset>
+          </div>
+		  <br>
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">İSİM</label>
+              <input class="input" type="text" placeholder="Text input" name="bisim">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">CİNSİYET</label>
+              <input class="input" type="text" placeholder="Text input" name="bcins">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">YAŞ</label>
+              <input class="input" type="text" placeholder="Text input" name="byas">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ETNİK GRUP</label>
+              <input class="input" type="text" placeholder="Text input" name="betnik">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">TELEFON NUMARASI</label>
+              <input class="input" type="text" placeholder="Text input" name="btel">
+            </div>
+          </div>
+		  
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ARAÇ TÜRÜ VE TANIMI</label>
+              <input class="input" type="text" placeholder="Text input" name="btanim">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ARAÇ MARKA/MODEL/RENK</label>
+              <input class="input" type="text" placeholder="Text input" name="bmarka">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">PLAKA</label>
+              <input class="input" type="text" placeholder="Text input" name="bplaka">
+            </div>
+          </div>
+		  
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">SAHİBİ SÜRÜCÜ DEĞİLSE ARAÇ SAHİBİNİN ADI</label>
+              <input class="input" type="text" placeholder="Text input" name="bsahip">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">TEL NO</label>
+              <input class="input" type="text" placeholder="Text input" name="bsahiptel">
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>TARAF 2:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="isur" value="isur">
+                  SÜRÜCÜ
+                </label>
+                <label class="radio">
+                  <input type="radio" name="iyay" value="iyay">
+                  YAYA
+                </label>
+                <label class="radio">
+                  <input type="radio" name="isab" value="isab">
+                  SABİT ARAÇ
+                </label>
+                <label class="radio">
+                  <input type="radio" name="idi" value="idi">
+                  DİĞER
+                </label>
+              </div>
+            </fieldset>
+          </div>
+		  <br>
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">İSİM</label>
+              <input class="input" type="text" placeholder="Text input" name="iisim">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">CİNSİYET</label>
+              <input class="input" type="text" placeholder="Text input" name="icins">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">YAŞ</label>
+              <input class="input" type="text" placeholder="Text input" name="iyas">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ETNİK GRUP</label>
+              <input class="input" type="text" placeholder="Text input" name="ietnik">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">TELEFON NUMARASI</label>
+              <input class="input" type="text" placeholder="Text input" name="itel">
+            </div>
+          </div>
+		  
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ARAÇ TÜRÜ VE TANIMI</label>
+              <input class="input" type="text" placeholder="Text input" name="itanim">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ARAÇ MARKA/MODEL/RENK</label>
+              <input class="input" type="text" placeholder="Text input" name="imarka">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">PLAKA</label>
+              <input class="input" type="text" placeholder="Text input" name="iplaka">
+            </div>
+          </div>
+		  
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">SAHİBİ SÜRÜCÜ DEĞİLSE ARAÇ SAHİBİNİN ADI</label>
+              <input class="input" type="text" placeholder="Text input" name="isahip">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">TEL NO</label>
+              <input class="input" type="text" placeholder="Text input" name="isahiptel">
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">KANITLAR</h1>
+          <div class="columns">
+            <div class="field column">
+              <label class="label">FOTOĞRAF ARŞİVİ</label>
+              <input class="input" type="text" placeholder="Text input" name="foto_arsiv">
+            </div>
+            <div class="field column">
+              <label class="label">VİDEO ARŞİVİ</label>
+              <input class="input" type="text" placeholder="Text input" name="vid_arsiv">
+            </div>            
+          </div>
+        </div>
+
+        <br>
+		
+        <div id="checkbox-group" style="border: 2px solid #e2e2e2; padding: 10px;">
+		
+		 
+		 <div style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap;">
+            <label class="label" style="font-size: 12px;">1/2 TEMEL KAZA FAKTÖRÜ</label>
+			<fieldset>
+              <div class="checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" name="sack1" value="sack">
+				  <input type="checkbox" name="sack2" value="sack">
+                  SACK İHLAL EDİLDİ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="kusur1" value="kusur">
+				  <input type="checkbox" name="kusur2" value="kusur">
+                  DİĞER KUSURLU SÜRÜŞ ŞEKLİ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="dis1" value="dis">
+				  <input type="checkbox" name="dis2" value="dis">
+                  DIŞ FAKTÖR
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="bilinmiyor1" value="bilinmiyor">
+				  <input type="checkbox" name="bilinmiyor2" value="bilinmiyor">
+                  BİLİNMİYOR
+                </label>
+              </div>
+            </fieldset>
+          </div>
+		  
+		  <div style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap;">
+            <label class="label" style="font-size: 12px;">KAZA ŞEKLİ</label>
+			<fieldset>
+              <div class="checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" name="kafa_kafa" value="kaf">
+                  KAFA KAFAYA
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="ar_ka" value="ark">
+                  ARKADAN
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="surt_me" value="sur">
+                  SÜRTME
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="dig_er" value="dig">
+                  DİĞER
+                </label>
+              </div>
+            </fieldset>
+          </div>
+		  
+		  <div style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap;">
+            <label class="label" style="font-size: 12px;">1/2 ÖZEL BİLGİ</label>
+			<fieldset>
+              <div class="checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" name="dui_etki1" value="dui_etki">
+				  <input type="checkbox" name="dui_etki2" value="dui_etki">
+                  ALKOL/UYUŞTURUCU ETKİSİ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="cep_telefonu1" value="cep_telefonu">
+				  <input type="checkbox" name="cep_telefonu2" value="cep_telefonu">
+                  CEP TELEFONU KULLANIMI
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="yaris1" value="yaris">
+				  <input type="checkbox" name="yaris2" value="yaris">
+                  YARIŞ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="oto1" value="oto">
+				  <input type="checkbox" name="oto2" value="oto">
+                  OTOPİLOT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+
+		
+		</div>
+		
+		<br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">AÇIKLAMA</h1>
+          <button type="button" class="button is-primary" onclick="makeTextBold()">Bold</button>
+          <textarea class="textarea" placeholder="10 lines of textarea" rows="10" name="aciklama" id="textarea"></textarea>
+        </div>
+
+        <br>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">BBCode'u Kopyala</button>
+          </div>
+          <div class="control">
+            <button type="reset" class="button is-link is-light">Formu Temizle</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("form")
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault()
+      const formData = new FormData(this)
+      const BBCODE = `
+
+[table=#d0dade,white][tr]
+[tdwidth=#000000,#ffffff,top,left,20,20]
+[size=75]STATE OF SAN ANDREAS
+DEPARTMENT OF SAN ANDREAS HIGHWAY PATROL[/size]
+[size=150][b]TRAFİK KAZASI RAPORU[/b][/size]
+[size=100]SAHP 555 Page 1 (Rev. 3-20) OPI 060[/size]
+[hr][/hr]
+
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]RAPOR NO[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("rapor_no")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]MEMUR SERİ NO[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("seri_no")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]DURUM KODU[/b][/size]
+[size=85]‏‏‎ ‎${formData.get("durum_kodu")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]VUR VE KAÇ MI? (M/F)[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("vur_kac")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]YARALI/ÖLÜ SAYISI[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("yarali_olu")}[/size]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,10,5][size=75][b]KAZA LOKASYONU[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("kaza_lok")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,5,5][size=75][b]KAZA TARİHİ[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("kaza_tar")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,5,5][size=75][b]KAZA SAATİ[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("kaza_sa")}[/size]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,2,5][size=130][b][center]TARAF
+1[/center][/b][/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,5,5][center][size=75][b]SÜRÜCÜ[/b][/size]
+[cb${formData.get("bsur") === "bsur" ? "c" : ""}] [/center]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][center][size=75][b]YAYA[/b][/size]
+[cb${formData.get("byay") === "byay" ? "c" : ""}][/center]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,5,5][center][size=75][b]SABİT ARAÇ[/b][/size]
+[cb${formData.get("bsab") === "bsab" ? "c" : ""}][/center]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][center][size=75][b]DİĞER[/b][/size]
+[cb${formData.get("bdi") === "bdi" ? "c" : ""}][/center]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,5,5][size=75][b]İSİM[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("bisim")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,3,5][size=75][b]CİNSİYET[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("bcins")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,1,5][size=75][b]YAŞ[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("byas")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]ETNİK GRUP[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("betnik")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,7,5][size=75][b]TEL NO[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("btel")}[/size]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,7,5][size=75][b]ARAÇ TÜRÜ/VARSA TANIMI[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("btanim")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,7,5][size=75][b]ARAÇ MARKA/MODEL/RENK[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("bmarka")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,6,5][size=75][b]PLAKA[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("bplaka")}[/size]
+[/tdwidth]
+[/tr]
+
+[/table]
+
+[table][tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,10,5][size=75][b]SAHİBİ SÜRÜCÜ DEĞİLSE ARAÇ SAHİBİNİN ADI[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("bsahip")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,10,5][size=75][b]TEL NO[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("bsahiptel")}[/size]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,2,5][size=130][b][center]TARAF
+2[/center][/b][/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,5,5][center][size=75][b]SÜRÜCÜ[/b][/size]
+[cb${formData.get("isur") === "isur" ? "c" : ""}] [/center]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][center][size=75][b]YAYA[/b][/size]
+[cb${formData.get("iyay") === "iyay" ? "c" : ""}][/center]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,5,5][center][size=75][b]SABİT ARAÇ[/b][/size]
+[cb${formData.get("isab") === "isab" ? "c" : ""}][/center]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][center][size=75][b]DİĞER[/b][/size]
+[cb${formData.get("idi") === "idi" ? "c" : ""}][/center]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,5,5][size=75][b]İSİM[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("iisim")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,3,5][size=75][b]CİNSİYET[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("icins")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,1,5][size=75][b]YAŞ[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("iyas")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]ETNİK GRUP[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("ietnik")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,7,5][size=75][b]TEL NO[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("itel")}[/size]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,7,5][size=75][b]ARAÇ TÜRÜ/VARSA TANIMI[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("itanim")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,7,5][size=75][b]ARAÇ MARKA/MODEL/RENK[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("imarka")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,6,5][size=75][b]PLAKA[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("iplaka")}[/size]
+[/tdwidth]
+[/tr]
+
+[/table]
+
+[table][tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,10,5][size=75][b]SAHİBİ SÜRÜCÜ DEĞİLSE ARAÇ SAHİBİNİN ADI[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("isahip")}[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,10,5][size=75][b]TEL NO[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("isahiptel")}[/size]
+[/tdwidth]
+
+[/tr]
+[/table]
+[/tdwidth][/tr][/table]
+ㅤㅤㅤㅤㅤㅤ
+[hr][/hr]
+ㅤㅤㅤㅤㅤㅤ
+[table=#d0dade,white][tr]
+[tdwidth=#000000,#ffffff,top,left,20,20]
+[size=75]STATE OF SAN ANDREAS
+DEPARTMENT OF SAN ANDREAS HIGHWAY PATROL[/size]
+[size=150][b]TRAFİK KAZASI KODLAMASI[/b][/size]
+[size=100]SAHP 555 Page 2 (Rev. 3-20) OPI 060[/size]
+[hr][/hr]
+
+
+[table]
+[tr]
+[tdwidth=#d0dade,#ffffff,top,left,6,5][size=75][b]1 / 2 TEMEL KAZA FAKTÖRÜ[/b][/size]
+[cb${formData.get("sack1") === "sack" ? "c" : ""}] [cb${formData.get("sack2") === "sack" ? "c" : ""}] [size=85] SACK İHLAL EDİLDİ[/size]
+[cb${formData.get("kusur1") === "kusur" ? "c" : ""}] [cb${formData.get("kusur2") === "kusur" ? "c" : ""}] [size=85] DİĞER KUSURLU SÜRÜŞ ŞEKLİ[/size]
+[cb${formData.get("dis1") === "dis" ? "c" : ""}] [cb${formData.get("dis2") === "dis" ? "c" : ""}] [size=85] DIŞ FAKTÖR[/size]
+[cb${formData.get("bilinmiyor1") === "bilinmiyor" ? "c" : ""}] [cb${formData.get("bilinmiyor2") === "bilinmiyor" ? "c" : ""}] [size=85] BİLİNMİYOR[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]KAZA ŞEKLİ[/b][/size]
+[cb${formData.get("kafa_kafa") === "kaf" ? "c" : ""}] [size=85] KAFA KAFAYA[/size]
+[cb${formData.get("ar_ka") === "ark" ? "c" : ""}] [size=85] ARKADAN[/size]
+[cb${formData.get("surt_me") === "sur" ? "c" : ""}] [size=85] SÜRTME[/size]
+[cb${formData.get("dig_er") === "dig" ? "c" : ""}] [size=85] DİĞER[/size]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,6,5][size=75][b]1 / 2 ÖZEL BİLGİ[/b][/size]
+[cb${formData.get("dui_etki1") === "dui_etki" ? "c" : ""}] [cb${formData.get("dui_etki2") === "dui_etki" ? "c" : ""}] [size=85] ALKOL/UYUŞTURUCU ETKİSİ[/size]
+[cb${formData.get("cep_telefonu1") === "cep_telefonu" ? "c" : ""}] [cb${formData.get("cep_telefonu2") === "cep_telefonu" ? "c" : ""}] [size=85] CEP TELEFONU KULLANIMI[/size]
+[cb${formData.get("yaris1") === "yaris" ? "c" : ""}] [cb${formData.get("yaris2") === "yaris" ? "c" : ""}] [size=85] YARIŞ ŞÜPHESİ[/size]
+[cb${formData.get("oto1") === "oto" ? "c" : ""}] [cb${formData.get("oto2") === "oto" ? "c" : ""}] [size=85] OTOPİLOT[/size]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]FOTOĞRAF ARŞİVİ NO[/b][/size]
+[url=${formData.get("foto_arsiv")}]BAĞLANTI[/url]
+[/tdwidth]
+
+[tdwidth=#d0dade,#ffffff,top,left,4,5][size=75][b]VİDEO ARŞİVİ NO[/b][/size]
+[url=${formData.get("vid_arsiv")}]BAĞLANTI[/url]
+[/tdwidth]
+
+[/tr]
+[/table]
+
+[table]
+[tr]
+
+[tdwidth=#d0dade,#ffffff,top,left,12,5][size=75][b]AÇIKLAMA[/b][/size]
+[size=85]‏‏‎ ‎‎${formData.get("aciklama")}[/size]
+[/tdwidth]
+
+[/tr]
+[/table]
+[/tdwidth][/tr][/table]
+      `
+
+      navigator.clipboard.writeText(BBCODE).then(() => alert("BBCode başarıyla kopyalandı!"))
+    })
+
+    function makeTextBold() {
+        const textarea = document.getElementById('textarea');
+
+        const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+
+        const newText = "[b]" + selectedText + "[/b]";
+
+        textarea.setRangeText(newText, textarea.selectionStart, textarea.selectionEnd, 'end');
+
+        textarea.setSelectionRange(
+            textarea.selectionStart + 3, 
+            textarea.selectionEnd + 3    
+        );
+    }
+
+    const html = document.getElementsByTagName('html')[0];
+    html.dataset.theme = localStorage.getItem("theme")
+    function toggleTheme() {
+      if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "dark")
+        html.dataset.theme = "dark"
+      } else {
+        const currentTheme = localStorage.getItem("theme")
+        if (currentTheme === "light") {
+          localStorage.setItem("theme", "dark")
+          html.dataset.theme = "dark";
+        }
+  
+        if (currentTheme === "dark") {
+          localStorage.setItem("theme", "light")
+          html.dataset.theme = "light"
+        }
+      }
+    }
+  </script>
+</body>
+</html>
