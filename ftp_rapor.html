@@ -16,15 +16,132 @@
     .divide-wrapper div {
       border-top: 2px solid #e2e2e2;
     }
+        .popup {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: none;
+        }
+        .popup-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888888;
+            width: 80%;
+        }
+        .popup-content button {
+            display: block;
+            margin: 0 auto;
+        }
+        .show {
+            display: block;
+        }
+        h1 {
+            color: green;
+        }
   </style>
 </head>
 <body>
   <section class="section">
+  
+  	      <button id="myButton">
+          Değerlendirme Kategorileri
+      </button>
+    <div id="myPopup" class="popup">
+        <div class="popup-content">
+            <b>Eleştiri ve Geri Bildirime Karşı Yaklaşım:</b>
+<br>Üstün: Aktif olarak geri bildirim ister. Hatalarını düzelterek performansının değerlendirilmesini talep eder.
+<br>Yeterli: Eleştiriyi olumlu bir şekilde kabul eder ve performansını iyileştirmek için kullanır.
+<br>Geliştirilmeli: Hata yapıldığını reddeder. Tartışmacıdır.
+<br>
+<br>
+<b>Polis Görevine Karşı Tutum:</b>
+<br>Üstün: Mesleki sorumluluk açısından yüksek ideallere sahiptir. 
+<br>Yeterli: Yeni sorumluluk almak için ilgi gösterir.
+<br>Geliştirilmeli: Yetkisini kötü kullanır ve ilgisizdir. Motivasyondan yoksundur.
+<br>
+<br>
+<b>Dürüstlük/Etik Kurallar:</b>
+<br>Üstün: Hizmet sorumluluğu konusunda model olur. Yüksek cesaret ve karakter sahibidir.
+<br>Yeterli: Dürüsttür. Kamuya güven aşılama becerisine sahiptir.
+<br>Geliştirilmeli: Departmana veya kamuya karşı hesap verebilirlik duygusu azdır. Eylemlerinden sorumluluk duymaz.
+<br>
+<br>
+<b>Toplum ve Vatandaş İlişkileri:</b>
+<br>Üstün: Vatandaşlarla yakınlık kuruyor. Daha fazla temas kurmak için çabalıyor.
+<br>Yeterli: Nazik ve arkadaş canlısı. Vatandaşlar ile empati kurabiliyor. Eylemlerini, etkilenen kişilere açıklıyor.
+<br>Geliştirilmeli: Kavgacı, küçük düşürücü, zorba, önyargılı. Hizmet görevinin farkında değil. Vatandaşlar için erişilmez davranıyor, talepleri görmezden geliyor.
+<br>
+<br>
+<b>Diğer Personellerle İlişkileri:</b>
+<br>Üstün: Denetmenlerin pozisyonlarını anlar ve yönlendirmelere uyar. Payına düşmese bile meslek arkadaşlarına yardımcı olur.
+<br>Yeterli: Emir komuta zincirine bağlıdır. Diğer personeller ile iyi arkadaştır.
+<br>Geliştirilmeli: Dedikodu yapıyor. Kendi payına düşen görevi yerine getirmez. Meslek arkadaşlarına karşı düşmanca davranır.
+<br>
+<br>
+<b>Sürüş Becerisi:</b>
+<br>Üstün: Yüksek derecede refleks yeteneği ve sürüş becerisi sergiler. Yol koşullarını önceden tahmin eder ve buna göre hareket eder.
+<br>Yeterli: Trafik kurallarına uyar. Aracın kontrolünü elinde tutar. Kod 3 ve araç takibi prosedürlerine uyum sağlar.
+<br>Geliştirilmeli: Trafik kurallarını sık sık ihlal eder. Çok hızlı veya çok yavaş araç kullanır. Tepe lambası ve sireni gereksiz veya uygunsuz çalıştırır.
+<br>
+<br>
+<b>Rapor Yazma Becerisi:</b>
+<br>Üstün: Gerekli formu yardım almadan doğru bir şekilde tamamlıyor. Raporu oldukça kapsamlı.
+<br>Yeterli: Yaygın formları biliyor. Bilgileri mantıklı şekilde düzenliyor. Okunaklı.
+<br>Geliştirilmeli: Yaygın formlara hakim değil. Bilgileri organize edemiyor. Ayrıntıları atlıyor. Okunaksız, kötü dil bilgisi ile yazıyor.
+<br>
+<br>
+<b>Memur Güvenliği:</b>
+<br>Üstün: Tehlikeli durumları öngörüyor ve hazırlanıyor. Ortağını sürekli olarak bilgilendiriyor ve uygun pozisyonda duruyor.
+<br>Yeterli: Güvenlik prosedürlerine uyum sağlıyor. Memur güvenliği zihniyetiyle çalışıyor.
+<br>Geliştirilmeli: Güvenlik prosedürlerine uymuyor.
+<br>
+<br>
+<b>Problem Çözme ve Karar Verme Teknikleri:</b>
+<br>Üstün: Karmaşık durumlar için mantık yürütebiliyor. Sorunların temel nedenlerini belirliyor. Tepkileri iyi değerlendiriyor ve önlem alıyor.
+<br>Yeterli: Çok az yardımla karar veriyor. Sorun üzerine mantık yürütebiliyor.
+<br>Geliştirilmeli: Kararsız ve naif. Düşünmeden ezberden hareket ediyor. Mantık yürütmüyor veya yanlış mantıkla hareket ediyor.
+<br>
+<br>
+<b>Telsiz İletişimi:</b>
+<br>Üstün: Kodlar ve telsiz dili hakkında yardım almıyor. Telsizin akışını takip edip şehirde neler olduğunu anlayabiliyor ve ona göre hareket ediyor.
+<br>Yeterli: Kodlar hakkında bilgi sahibi. Telsiz trafiğinin farkında ve kendi birimiyle alakalı durumları fark edebiliyor.
+<br>Geliştirilmeli: Kodları yanlış kullanıyor. İletişim konusunda çekingen davranıyor. Telsiz trafiğini umursamıyor ve yardım çağrılarını fark edemiyor.
+<br>
+<br>
+<b>Mobile Data Computer Kullanımı:</b>
+<br>Üstün: İstenen kayda hızlı şekilde ulaşıyor. Yardım almadan tüm raporları sisteme eksiksiz, doğru giriyor.
+<br>Yeterli: Yardım almadan kayıtlara ulaşıyor. Rapor sistemini kullanabiliyor.
+<br>Geliştirilmeli: Kişi kayıtlarına ulaşamıyor. Sık sık yardım ve yönlendirme alması gerekiyor. ((Evrak taslaklarını kullanamıyor, raporları girmeyi beceremiyor))
+<br>
+<br>
+<b>Ceza/Hukuk Bilgisi:</b>
+<br>Üstün: Tüm kanunlar hakkında üstün bilgiye sahip. Bilgilerini sahada aktif bir şekilde uyguluyor.
+<br>Yeterli: Yaygın suçları tanıyor ve ilgili kanunları uyguluyor. Suç teşkil eden ve etmeyen eylemleri ayırt edebiliyor.
+<br>Geliştirilmeli: Suç işlenip işlenmediğini idrak edemiyor. Yasadışı arama yapmaya teşebbüs ediyor. Yasadışı tutuklama yapıyor. 
+<br>
+<br>
+<b>((Karakter Derinliği)):</b>
+<br>Üstün: Karakterin ailesi ve çevresi var. Hikayesel veya rol içerisinde yaşanan olaylardan etkilenerek karakterini geliştiriyor.
+<br>Yeterli: Karakterin ailesi ve çevresi var. Abartı mal varlıklarına sahip değil. Gerçek bir memur izlenimi veriyor.
+<br>Geliştirilmeli: Karakterini bir polis gibi yönetmiyor. Karakterin hiçbir arka planı yok veya role bunu yansıtmıyor. Anlamsız malvarlığı var.
+            <button id="closePopup">
+                  Kapat
+              </button>
+        </div>
+    </div>
+  
     <div class="container" style="max-width: 900px;">
       <h1 class="title" style="text-align: center;">PROBATIONARY POLICE OFFICER DEĞERLENDİRME RAPORU</h1>
       <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
       <br>
       <br>
+	 
       <form id="form">
         <div style="border: 2px solid #e2e2e2; padding: 10px;">
           <h1 class="title is-4">ÜST BİLGİ</h1>
@@ -445,6 +562,17 @@
   </section>
 
   <script>
+        myButton.addEventListener("click", function () {
+            myPopup.classList.add("show");
+        });
+        closePopup.addEventListener("click", function () {
+            myPopup.classList.remove("show");
+        });
+        window.addEventListener("click", function (event) {
+            if (event.target == myPopup) {
+                myPopup.classList.remove("show");
+            }
+        });
     const form = document.getElementById("form")
 
     form.addEventListener("submit", function(e) {
