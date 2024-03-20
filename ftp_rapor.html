@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PD Report</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    html {
+      transition: color 300ms, background-color 300ms !important;
+    }
+    html[data-theme='dark'] {
+      filter: invert(1) hue-rotate(180deg) !important;
+    }
+    .divide-wrapper div {
+      border-top: 2px solid #e2e2e2;
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <h1 class="title" style="text-align: center;">PROBATIONARY POLICE OFFICER DEĞERLENDİRME RAPORU</h1>
+      <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
+      <br>
+      <br>
+      <form id="form">
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">ÜST BİLGİ</h1>
+          <p class="is-size-7"><b>(1)</b> GELİŞMELİ - <b>(2)</b> YETERLİ - <b>(3)</b> ÜSTÜN - <b>(N/O)</b> GÖZLEMLENEMEDİ - <b>(NRT)</b> EĞİTİME TEPKİSİZ</p>
+          <br>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">PROBATIONARY POLICE OFFICER</label>
+              <input class="input" type="text" placeholder="Aday ismi" name="ust_bilgi_probationary_police_officer">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">FIELD TRAINING OFFICER</label>
+              <input class="input" type="text" placeholder="Eğitmen ismi" name="ust_bilgi_field_training_officer">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">TARIH</label>
+              <input class="input" type="text" placeholder="Devriye başlangıcı tarihi" name="ust_bilgi_tarih">
+            </div>
+          </div>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">DEVRİYE SÜRESİ</label>
+              <input class="input" type="text" placeholder="Saat ve dakika cinsinden" name="ust_bilgi_saat">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">RAPOR NO.</label>
+              <input class="input" type="text" placeholder="Kaçıncı rapor? (Örn: 03) " name="ust_bilgi_rapor_no">
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;" class="divide-wrapper">
+          <h1 class="title is-4">DIŞ GÖRÜNÜŞ</h1>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>1. Eleştiri ve Geri Bildirime Karşı Yaklaşım:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_bir" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_bir" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_bir" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_bir" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_bir" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>2. Polis Görevine Karşı Tutum:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_iki" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_iki" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_iki" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_iki" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_iki" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>3. Dürüstlük/Etik Kurallar:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_uc" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_uc" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_uc" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_uc" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_uc" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>4. Toplum ve Vatandaş İlişkileri:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_dort" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_dort" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_dort" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_dort" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_dort" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>5. Diğer Personellerle İlişkileri:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_bes" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_bes" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_bes" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_bes" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_bes" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>6. Sürüş Becerisi:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_alti" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_alti" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_alti" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_alti" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_alti" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>7. Rapor Yazma Becerisi:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_yedi" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_yedi" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_yedi" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_yedi" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_yedi" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>8. Memur Güvenliği:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_sekiz" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_sekiz" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_sekiz" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_sekiz" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_sekiz" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>9. Problem Çözme ve Karar Verme Teknikleri:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_dokuz" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_dokuz" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_dokuz" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_dokuz" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_dokuz" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>10. Telsiz İletişimi:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_on" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_on" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_on" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_on" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_on" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>11. Mobile Data Computer Kullanımı:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_onbir" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_onbir" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_onbir" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_onbir" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_onbir" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>12. Ceza Hukuk Bilgisi:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_oniki" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_oniki" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_oniki" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_oniki" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_oniki" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>13. ((Karakter Derinliği)):</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_onuc" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_onuc" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_onuc" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_onuc" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_onuc" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
+	   </div>
+
+        <br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">ZAYIF PERFORMANS</h1>
+          <textarea class="textarea" placeholder="Geliştirilmesi gereken performansı ya da hataları açıklayıp düzeltme önerileri sunun." rows="3" name="zayif_perf" id="textarea"></textarea>
+        </div>
+		
+	    <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-5">ÜSTÜN PERFORMANS</h1>
+          <textarea class="textarea" placeholder="Üstün beceri gösterdiği alanları açıklayarak performansını korumasını sağlayın." rows="3" name="ustun_perf" id="textarea"></textarea>
+        </div>
+		
+		<div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-6">VERİLEN EĞİTİMLER</h1>
+          <textarea class="textarea" placeholder="Devriye boyunca teorik ve uygulamalı olarak sağlanan eğitimleri belirtin." rows="3" name="verilen_egitim" id="textarea"></textarea>
+        </div>
+
+        <br>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">BBCode'u Kopyala</button>
+          </div>
+          <div class="control">
+            <button type="reset" class="button is-link is-light">Formu Temizle</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("form")
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault()
+      const formData = new FormData(this)
+      const BBCODE = `
+[center][size=125]LOS SANTOS POLICE DEPARTMENT
+        [b]PROBATIONARY POLICE OFFICER DEĞERLENDİRME RAPORU[/b][/size][/center]
+  
+        [table=#d0dade,white][tr]
+        [tdwidth=#d0dade,#ffffff,top,left,4,1][size=85][indent=2]PROBATIONARY POLICE OFFICER
+        ${formData.get("ust_bilgi_probationary_police_officer")}[/indent][/size][/tdwidth]
+        [tdwidth=#d0dade,#ffffff,top,left,4,1][size=85][indent=2]FIELD TRAINING OFFICER
+        ${formData.get("ust_bilgi_field_training_officer")}[/indent][/size][/tdwidth]
+        [tdwidth=#d0dade,#ffffff,top,left,2,1][size=85][indent=2]TARIH
+        ${formData.get("ust_bilgi_tarih")}[/indent][/size][/tdwidth][/table]
+        [table=#d0dade,white][tr]
+        [tdwidth=#d0dade,#ffffff,top,left,3,1][size=85][indent=2]DEVRİYE SÜRESİ
+        ${formData.get("ust_bilgi_saat")}[/indent][/size][/tdwidth]
+        [tdwidth=#d0dade,#ffffff,top,left,3,1][size=85][indent=2]RAPOR NO.
+        ${formData.get("ust_bilgi_rapor_no")}[/indent][/size][/tdwidth][/table]
+        [size=87][b]DEĞERLENDİRME YÖNERGELERİ[/b]: İlgili memur değerlendirilirken aşağıdaki değerlendirme ölçeği kullanılmalıdır. Özel yorumlar, genel değerlendirme bölümünde yapılmalıdır.
+        [indent=40][b][u](1) GELİŞMESİ GEREKİYOR:[/u][/b] Gerekli görevlerin yerine getirilmesinde yetersiz olunduğunu belirtir.[/indent]
+        [indent=40][b][u](2) YETERLİ:[/u][/b] Gösterilen performansın kabul edilebilir düzeyde olduğunu gösterir.[/indent]
+        [indent=40][b][u](3) ÜSTÜN:[/u][/b] Gerekli görevlerin yerine getirilebilmesi için yeterli performanstan daha fazlasının gösterildiğini belirtir.[/indent]
+        [indent=40][b][u](N/O) GÖZLEMLENEMEDİ:[/u][/b] İlgili madde için gözlem yapılamadığını belirtir.[/indent]
+        [indent=40][b][u](NRT) EĞİTİME TEPKİSİZ:[/u][/b] Eğitimin işe yaramadığını gösterir.[/indent]
+  
+        [table=#d0dade,white][tr]
+        [tdwidth=#d0dade,#ffffff,left,left,4,1][b][size=85][indent=3]PERFORMANS[/indent][/size][/b][/tdwidth][/tr][/table][table=#d0dade,white]
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]1. Eleştiri ve Geri Bildirime Karşı Yaklaşım:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_bir") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_bir") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_bir") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_bir") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_bir") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]2. Polis Görevine Karşı Tutum:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_iki") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_iki") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_iki") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_iki") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_iki") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]3. Dürüstlük/Etik Kurallar:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_on") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_uc") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_uc") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_uc") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_uc") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]4. Toplum ve Vatandaş İlişkileri:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_dort") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_dort") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_dort") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_dort") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_dort") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]5. Diğer Personellerle İlişkileri:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_bes") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_bes") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_bes") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_bes") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_bes") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]6. Sürüş Becerisi:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_alti") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_alti") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_alti") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_alti") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_alti") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]7. Rapor Yazma Becerisi:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_yedi") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_yedi") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_yedi") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_yedi") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_yedi") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]8. Memur Güvenliği:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_sekiz") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_sekiz") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_sekiz") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_sekiz") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_sekiz") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]9. Problem Çözme ve Karar Verme Teknikleri:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_dokuz") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_dokuz") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_dokuz") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_dokuz") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_dokuz") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]10. Telsiz İletişimi:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_on") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_on") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_on") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_on") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_on") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]11. Mobile Data Computer Kullanımı:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_onbir") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_onbir") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_onbir") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_onbir") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_onbir") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]12. Ceza Hukuk Bilgisi:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_oniki") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_oniki") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_oniki") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_oniki") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_oniki") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]13. ((Karakter Derinliği)):[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_onuc") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_onuc") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_onuc") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_onuc") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_onuc") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+  
+        [/table]
+  
+ 
+        [hr][/hr]
+
+        [table=#ffffff,white][tr]
+        [tdwidth=#d0dade,#ffffff,middle,left,4,1][size=85][indent=2]ZAYIF PERFORMANSLAR
+        ${formData.get("zayif_perf")}
+  
+  
+  
+        [/indent][/size][/tdwidth][/table]
+
+        [table=#ffffff,white][tr]
+        [tdwidth=#d0dade,#ffffff,middle,left,4,1][size=85][indent=2]ÜSTÜN PERFORMANSLAR
+        ${formData.get("ustun_perf")}
+  
+  
+  
+        [/indent][/size][/tdwidth][/table]
+
+        [table=#ffffff,white][tr]
+        [tdwidth=#d0dade,#ffffff,middle,left,4,1][size=85][indent=2]VERİLEN EĞİTİM KONULARI
+        ${formData.get("verilen_egitim")}
+  
+  
+  
+        [/indent][/size][/tdwidth][/table]
+      `
+
+      navigator.clipboard.writeText(BBCODE).then(() => alert("BBCode başarıyla kopyalandı!"))
+    })
+
+    function makeTextBold() {
+        const textarea = document.getElementById('textarea');
+
+        const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+
+        const newText = "[b]" + selectedText + "[/b]";
+
+        textarea.setRangeText(newText, textarea.selectionStart, textarea.selectionEnd, 'end');
+
+        textarea.setSelectionRange(
+            textarea.selectionStart + 3, 
+            textarea.selectionEnd + 3    
+        );
+    }
+
+    const html = document.getElementsByTagName('html')[0];
+    html.dataset.theme = localStorage.getItem("theme")
+    function toggleTheme() {
+      if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "dark")
+        html.dataset.theme = "dark"
+      } else {
+        const currentTheme = localStorage.getItem("theme")
+        if (currentTheme === "light") {
+          localStorage.setItem("theme", "dark")
+          html.dataset.theme = "dark";
+        }
+  
+        if (currentTheme === "dark") {
+          localStorage.setItem("theme", "light")
+          html.dataset.theme = "light"
+        }
+      }
+    }
+  </script>
+</body>
+</html>
