@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İHLAL RAPORU</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    html {
+      transition: color 300ms, background-color 300ms !important;
+    }
+    html[data-theme='dark'] {
+      filter: invert(1) hue-rotate(180deg) !important;
+    }
+    .divide-wrapper div {
+      border-top: 2px solid #e2e2e2;
+    }
+	.checkbox {
+		width: 300px;
+		}
+	
+	#checkbox-group {
+	 columns: 3;
+     -webkit-columns: 3;
+     width: 100%;
+	 }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <h1 class="title" style="text-align: center;">İHLAL RAPORU</h1>
+      <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
+      <br>
+      <br>
+      <form id="form">
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">İHLAL RAPORU</h1>
+          <br>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">TARİH</label>
+              <input class="input" type="text" placeholder="Text input" name="tarih_ihlal">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">İHLAL KONUMU</label>
+              <input class="input" type="text" placeholder="Text input" name="konum_ihlal">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">İHLAL KODU</label>
+              <input class="input" type="text" placeholder="Text input" name="kod_ihlal">
+            </div>
+          </div>
+		  
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">MARKA VE MODEL</label>
+              <input class="input" type="text" placeholder="Text input" name="marka_arac">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">RENK</label>
+              <input class="input" type="text" placeholder="Text input" name="renk_arac">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">PLAKA</label>
+              <input class="input" type="text" placeholder="Text input" name="plaka_arac">
+            </div>
+          </div>
+		  
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">EK AÇIKLAMA</label>
+              <input class="input" type="text" placeholder="Text input" name="ek_aciklama">
+            </div>
+          </div>
+		  
+		  
+        </div>
+
+        <br>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">BBCode'u Kopyala</button>
+          </div>
+          <div class="control">
+            <button type="reset" class="button is-link is-light">Formu Temizle</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("form")
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault()
+      const formData = new FormData(this)
+      const BBCODE = `
+
+<div class="content"><span style="font-size:95%;line-height:116%">LOS SANTOS POLICE DEPARTMENT<br>
+CITY OF LOS SANTOS</span><br>
+<strong><span style="font-size:125%;line-height:116%">İHLAL RAPORU</span></strong><br>
+<br>
+<table style="border:1px solid #d0dade;background:white"><tbody><tr>
+<td style="border: 1px solid rgb(208, 218, 222); background: rgb(255, 255, 255); vertical-align: top; text-align: left; width: 3%; padding: 1px;"><font color="#000000"><span style="font-size: 85%; line-height: 116%; font-size: 85%; line-height: 116%;"></span></font><div style="padding-left: 2px;"><span style="line-height: 116%;"><span style="color: black; font-size: 85%;">PERSONEL BİLGİSİ</span><br><font color="#000000"><span style="font-size: 11.05px;">LORENA WEDA</span></font><br></span></div></td>
+<td style="border: 1px solid rgb(208, 218, 222); background: rgb(255, 255, 255); vertical-align: top; text-align: left; width: 1%; padding: 1px;"><font color="#000000"><span style="font-size: 85%; line-height: 116%; font-size: 85%; line-height: 116%;"></span></font><div style="padding-left: 2px;"><span style="line-height: 116%;"><span style="color: black; font-size: 85%;">SERİ NO.</span><br><font color="#000000"><span style="font-size: 11.05px;">40853</span></font><br></span></div></td>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:1%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;line-height:116%">DIVISION<br>
+CTD</span></div></td>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:2%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;line-height:116%">GÖREVLENDİRME<br>
+FS</span></div></td>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:1%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;line-height:116%">TARİH<br>
+‎‎${formData.get("tarih_ihlal")}</span></div></td></tr>
+</tbody></table>
+<table style="border:1px solid #d0dade;background:white"><tbody><tr>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:1%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;line-height:116%">İHLAL TARİHİ<br>
+‎‎${formData.get("tarih_ihlal")}</span></div></td>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:2%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;line-height:116%">İHLAL KONUMU<br>
+‎‎${formData.get("konum_ihlal")}</span></div></td>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:1%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;color: black;line-height:116%">İHLAL KODLARI<br>
+‎‎${formData.get("kod_ihlal")}</span></div></td></tr>
+</tbody></table>
+<table style="border:1px solid #d0dade;background:white"><tbody><tr>
+<td style="border: 1px solid rgb(208, 218, 222); background: rgb(255, 255, 255); vertical-align: top; text-align: left; width: 4%; padding: 1px;"><font color="#000000"><span style="font-size: 85%; line-height: 116%; font-size: 85%; line-height: 116%;"></span></font><div style="padding-left: 2px;"><span style="color: black; font-size: 85%; line-height: 116%;"><strong>ARAÇ BİLGİSİ</strong></span><br></div></td></tr></tbody></table>
+<table style="border:1px solid #d0dade;background:white"><tbody><tr>
+<td style="border: 1px solid rgb(208, 218, 222); background: rgb(255, 255, 255); vertical-align: top; text-align: left; width: 3%; padding: 1px;"><font color="#000000"><span style="font-size: 85%; line-height: 116%; font-size: 85%; line-height: 116%;"></span></font><div style="padding-left: 2px;"><span style="line-height: 116%;"><span style="color: black; font-size: 85%;">MARKA ve MODEL</span><br><font color="#000000"><span style="font-size: 11.05px;">‎‎${formData.get("marka_arac")}</span></font><br></span></div></td>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:1%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;line-height:116%">RENK<br>
+‎‎${formData.get("renk_arac")}</span></div></td>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:1%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;line-height:116%">PLAKA<br>
+‎‎${formData.get("plaka_arac")}</span></div></td></tr></tbody></table>
+<table style="border:1px solid #d0dade;background:white"><tbody><tr>
+<td style="border:1px solid #d0dade;background:#ffffff;vertical-align:top;text-align:left;color: black;width:4%;padding:1px"><span style="font-size:85%;line-height:116%"></span><div style="padding-left:2px"><span style="font-size:85%;line-height:116%"><strong>DETAYLAR</strong></span><br>‎‎${formData.get("plaka_arac")} PLAKALI, ‎‎${formData.get("marka_arac")} MODEL ARACA ‎‎${formData.get("konum_ihlal")} ÜZERİNDE ‎‎${formData.get("kod_ihlal")} GERÇEKLEŞTİRDİĞİ İÇİN TRAFİK DURDURMASI UYGULADIM. ${formData.get("ek_aciklama")}<br></div></td></tr></tbody></table>
+</div>
+
+      `
+
+      navigator.clipboard.writeText(BBCODE).then(() => alert("BBCode başarıyla kopyalandı!"))
+    })
+
+    function makeTextBold() {
+        const textarea = document.getElementById('textarea');
+
+        const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+
+        const newText = "[b]" + selectedText + "[/b]";
+
+        textarea.setRangeText(newText, textarea.selectionStart, textarea.selectionEnd, 'end');
+
+        textarea.setSelectionRange(
+            textarea.selectionStart + 3, 
+            textarea.selectionEnd + 3    
+        );
+    }
+
+    const html = document.getElementsByTagName('html')[0];
+    html.dataset.theme = localStorage.getItem("theme")
+    function toggleTheme() {
+      if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "dark")
+        html.dataset.theme = "dark"
+      } else {
+        const currentTheme = localStorage.getItem("theme")
+        if (currentTheme === "light") {
+          localStorage.setItem("theme", "dark")
+          html.dataset.theme = "dark";
+        }
+  
+        if (currentTheme === "dark") {
+          localStorage.setItem("theme", "light")
+          html.dataset.theme = "light"
+        }
+      }
+    }
+  </script>
+</body>
+</html>
