@@ -26,10 +26,169 @@
      -webkit-columns: 3;
      width: 100%;
 	 }
+        .popup {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: none;
+        }
+        .popup-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888888;
+            width: 80%;
+        }
+        .popup-content button {
+            display: block;
+            margin: 0 auto;
+        }
+        .show {
+            display: block;
+        }
+        h1 {
+            color: green;
+        }
   </style>
 </head>
 <body>
   <section class="section">
+  
+    	      <button id="myButton">
+          Taşıt Kanunları
+      </button>
+    <div id="myPopup" class="popup">
+        <div class="popup-content">
+<p><span style="color: #008000;"><strong>407. Hatalı Park</strong>&nbsp;<strong>(I)</strong></span></p>
+<ol>
+<li><strong>$1000</strong>&nbsp;para cezası</li>
+<li><strong>$2500</strong>&nbsp;para cezası</li>
+<li><strong>$5000</strong>&nbsp;para cezası</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>410. Aracın Dikkatsiz Kullanımı</strong>&nbsp;<strong>(I)</strong></span></p>
+<ol>
+<li><strong>$2500</strong>&nbsp;para cezası</li>
+<li><strong>$5000</strong>&nbsp;para cezası</li>
+<li><strong>$7500</strong>&nbsp;para cezası, araca&nbsp;<strong>2 g&uuml;n</strong>,&nbsp;lisansa&nbsp;<strong>3 g&uuml;n</strong>&nbsp;el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>405. Hız İhlali</strong>&nbsp;<strong>(I)</strong></span></p>
+<ol>
+<li><strong>$2500</strong>&nbsp;para cezası</li>
+<li><strong>$5000</strong>&nbsp;para cezası</li>
+<li><strong>$7500</strong>&nbsp;para cezası, araca <strong>2 g&uuml;n</strong>, lisansa&nbsp;<strong>3 g&uuml;n</strong>&nbsp;el koyma</li>
+</ol>
+<p><strong>&nbsp;</strong></p>
+<p><span style="color: #008000;"><strong>406. Trafik Levhalarına Uymamak</strong>&nbsp;<strong>(I)</strong></span></p>
+<ol>
+<li><strong>$1000</strong>&nbsp;para cezası</li>
+<li><strong>$2500</strong>&nbsp;para cezası</li>
+<li><strong>$5000</strong>&nbsp;para cezası, lisansa&nbsp;<strong>3 g&uuml;n</strong>&nbsp;el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>426. Vespucci Beach'te İzinsiz Ara&ccedil; Kullanımı&nbsp;(I)</strong></span></p>
+<ol>
+<li><strong>$2500</strong>&nbsp;para cezası</li>
+<li><strong>$5000</strong>&nbsp;para cezası</li>
+<li><strong>$7500</strong> para cezası, araca ve lisansa&nbsp;<strong>3 g&uuml;n</strong> el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>420. Ara&ccedil; Kayıt İhlali&nbsp;(I)</strong></span></p>
+<ol>
+<li><strong>$5000</strong> para cezası, araca ve lisansa&nbsp;<strong>3 g&uuml;n</strong> el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>412. Cam Filmleri&nbsp;(I)</strong></span></p>
+<ol>
+<li><strong>$2500</strong>&nbsp;para cezası</li>
+<li><strong>$5000</strong>&nbsp;para cezası, araca&nbsp;1<strong>&nbsp;g&uuml;n</strong>&nbsp;el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>418. Emniyet Kemeri &mdash; G&uuml;venlik Ekipmanı Kullanmama&nbsp;(I)</strong></span></p>
+<ol>
+<li><strong><strong><strong><strong><strong>$1000</strong>&nbsp;</strong></strong></strong></strong>para cezası</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>409. Ara&ccedil; G&uuml;r&uuml;lt&uuml; Kirliliği</strong>&nbsp;<strong>(I)</strong></span></p>
+<ol>
+<li><strong>$1000&nbsp;</strong>para cezası</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #ff9900;"><strong>408. Dikkatsiz S&uuml;r&uuml;ş</strong>&nbsp;<strong>(M)</strong></span></p>
+<p><strong>1 saat</strong> ve <strong>24 saat</strong> arası hapis cezası</p>
+<ol>
+<li><strong>$2500</strong>&nbsp;para cezası</li>
+<li><strong>$5000</strong>&nbsp;para cezası</li>
+<li><strong>$10000</strong>&nbsp;para cezası, araca&nbsp;4<strong>&nbsp;g&uuml;n</strong>,&nbsp;lisansa&nbsp;7<strong>&nbsp;g&uuml;n</strong>&nbsp;el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #ff9900;"><strong>401. Ge&ccedil;erli Bir S&uuml;r&uuml;c&uuml; Lisansı Olmadan Ara&ccedil; Kullanma&nbsp;(M)</strong></span></p>
+<p><strong>30&nbsp;dakika</strong>&nbsp;ve&nbsp;<strong>24 saat</strong>&nbsp;arası hapis cezası</p>
+<ol>
+<li><strong>$2500</strong>&nbsp;para cezası, araca&nbsp;1<strong>&nbsp;g&uuml;n</strong>&nbsp;el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #ff9900;"><strong>402. Askıya Alınmış Bir S&uuml;r&uuml;c&uuml; Lisansıyla Ara&ccedil; Kullanma</strong>&nbsp;<strong>(M)</strong></span></p>
+<p><strong>45&nbsp;dakika</strong>&nbsp;ve&nbsp;<strong>24 saat</strong>&nbsp;arası hapis cezası</p>
+<ol>
+<li><strong>$5000</strong>&nbsp;para cezası, araca&nbsp;2<strong>&nbsp;g&uuml;n</strong>&nbsp;el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #ff9900;"><strong>403. Vur ve Ka&ccedil;</strong>&nbsp;</span><strong><span style="color: #ff9900;">(M)</span>&nbsp;<span style="color: #ff0000;">(F)</span></strong></p>
+<ol>
+<li><strong>M: <strong>6 saat</strong>&nbsp;</strong>ve<strong>&nbsp;<strong>24 saat</strong>&nbsp;</strong>arası hapis cezası</li>
+<li><strong>F:&nbsp;12 saat&nbsp;</strong>ve<strong>&nbsp;3&nbsp;g&uuml;n&nbsp;</strong>arası hapis cezası</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;"><strong>415. Ara&ccedil; Tehlikesi&nbsp;(F)</strong></span></p>
+<p><strong>1&nbsp;g&uuml;n</strong>&nbsp;ve&nbsp;<strong>5 g&uuml;n</strong> arası hapis cezası</p>
+<ol>
+<li><strong>$10000</strong>&nbsp;para cezası</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong>411. Hidroliklerin Yasa Dışı Kullanımı</strong>&nbsp;<strong>(I)</strong></span></p>
+<ol>
+<li><strong>$2500&nbsp;</strong>para cezası</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #ff9900;"><strong>413.&nbsp;Alkol veya Uyuşturucu Maddenin Etkisinde Ara&ccedil; Kullanmak (DUI)</strong>&nbsp;<strong>(M)</strong></span></p>
+<ol>
+<li>Araca&nbsp;<strong>3&nbsp;g&uuml;n</strong>,&nbsp;lisansa&nbsp;<strong>3&nbsp;g&uuml;n</strong>&nbsp;el koyma, <strong>3 saat</strong> hapis cezası</li>
+<li>Araca&nbsp;<strong>7&nbsp;g&uuml;n</strong>,&nbsp;lisansa&nbsp;<strong>7&nbsp;g&uuml;n</strong>&nbsp;el koyma,&nbsp;<strong>6&nbsp;saat</strong>&nbsp;hapis cezası,&nbsp;<strong>$7500</strong>&nbsp;para cezası</li>
+<li>Araca&nbsp;<strong>7&nbsp;g&uuml;n</strong>,&nbsp;lisansa&nbsp;<strong>7&nbsp;g&uuml;n</strong>&nbsp;el koyma,&nbsp;<strong>24&nbsp;saat felony (c)</strong>&nbsp;hapis cezası,&nbsp;<strong>$12000</strong>&nbsp;para cezası</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #ff9900;"><strong>414. Yasa Dışı Ara&ccedil; Yarışı</strong>&nbsp;<strong>(M)</strong></span></p>
+<p><strong>1&nbsp;saat</strong>&nbsp;ve&nbsp;<strong>24 saat</strong>&nbsp;arası hapis cezası</p>
+<ol>
+<li><strong>$5500</strong>&nbsp;para cezası, araca&nbsp;<strong>7&nbsp;g&uuml;n</strong>,&nbsp;lisansa&nbsp;<strong>7&nbsp;g&uuml;n</strong>&nbsp;el koyma</li>
+</ol>
+<p><strong><strong>&nbsp;</strong></strong></p>
+<p><span style="color: #008000;"><strong><strong>416. Yaya Tehlikesi&nbsp;<strong>(I)</strong></strong></strong></span></p>
+<ol>
+<li><strong><strong><strong>$1500&nbsp;</strong></strong></strong>para cezası</li>
+</ol>
+<p><strong><strong><strong><strong>&nbsp;</strong></strong></strong></strong></p>
+<p><span style="color: #008000;"><strong><strong><strong><strong>419. Hasarlı Ara&ccedil; Kullanımı&nbsp;<strong>(I)</strong></strong></strong></strong></strong></span></p>
+<ol>
+<li><strong><strong><strong><strong><strong>$2000&nbsp;</strong></strong></strong></strong></strong>para cezası<strong><strong><strong><strong><strong>, </strong></strong></strong></strong></strong>araca<strong><strong><strong><strong><strong>&nbsp;2<strong>&nbsp;g&uuml;n</strong>&nbsp;</strong></strong></strong></strong></strong>el koyma</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="color: #008000;"><strong><strong><strong><strong><strong><strong>425. Bisikletin Dikkatsiz Kullanımı&nbsp;<strong>(I)</strong></strong></strong></strong></strong></strong></strong></span></p>
+<ol>
+<li><strong><strong><strong><strong><strong><strong><strong>$2500&nbsp;</strong></strong></strong></strong></strong></strong></strong>para cezası</li>
+</ol>            <button id="closePopup">
+                  Kapat
+              </button>
+        </div>
+    </div>
+  
     <div class="container" style="max-width: 900px;">
       <h1 class="title" style="text-align: center;">İHLAL RAPORU</h1>
       <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
@@ -69,7 +228,7 @@
             </div>
           </div>
 		  
-		  <div class="columns">
+	 <div class="columns">
             <div class="field column">
               <label class="label" style="font-size: 12px;">EK AÇIKLAMA</label>
               <input class="input" type="text" placeholder="Text input" name="ek_aciklama">
@@ -83,17 +242,34 @@
         
         <div class="field is-grouped">
           <div class="control">
-            <button type="submit" class="button is-link">BBCode'u Kopyala</button>
+            <button type="submit" class="button is-link">Kopyala</button>
           </div>
           <div class="control">
-            <button type="reset" class="button is-link is-light">Formu Temizle</button>
+            <button type="reset" class="button is-link is-light">Temizle</button>
           </div>
         </div>
+
+	      
+	      
       </form>
     </div>
   </section>
 
   <script>
+  
+          myButton.addEventListener("click", function () {
+            myPopup.classList.add("show");
+        });
+        closePopup.addEventListener("click", function () {
+            myPopup.classList.remove("show");
+        });
+        window.addEventListener("click", function (event) {
+            if (event.target == myPopup) {
+                myPopup.classList.remove("show");
+            }
+        });
+
+  
     const form = document.getElementById("form")
 
     form.addEventListener("submit", function(e) {
