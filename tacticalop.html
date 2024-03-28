@@ -1,0 +1,904 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tactical Operation Plan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack@0.8.1/dist/hack.min.css">
+
+
+
+<style>
+    html {
+      transition: color 300ms, background-color 300ms !important;
+    }
+    html[data-theme='dark'] {
+  background-color: black;
+  color: white;
+    }
+    .divide-wrapper div {
+      border-top: 2px solid #e2e2e2;
+    }
+	.checkbox {
+		width: 300px;
+		}
+	
+	#checkbox-group {
+	 columns: 3;
+     -webkit-columns: 3;
+     width: 100%;
+	 }
+	 
+	 
+.grid-container {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+    grid-gap: 1px;
+}
+
+.grid-item {
+  padding: 4px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <h1 class="title" style="text-align: center;">Tactical Operation Plan</h1>
+      <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
+      <br>
+      <br>
+      <form id="form">
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+		<p><b>Not:</b> Bu form arama ve tutuklama emri uygulaması için hazırlanacaktır. Birim Supervisorlerine 24 saat içinde planın birer kopyası ulaştırılmalıdır. Plan, operasyondan bir saat önce diğer personelin erişimine açılır.</p>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">OPERASYON TÜRÜ:</label>
+              <input class="input" type="text" placeholder="Search/arrest" name="op_tur">
+            </div>
+          </div>
+		  
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">YÜRÜTEN DIV. YA DA BİRİM:</label>
+              <input class="input" type="text" placeholder="Division" name="yur_div">
+            </div>
+          </div>		  
+		  
+		  
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">SORUŞTURMACI ADI VE SERİ NO:</label>
+              <input class="input" type="text" placeholder="Ad ve seri no" name="sor_ad">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">TELEFON NO:</label>
+              <input class="input" type="text" placeholder="Telefon numarası" name="sor_tel">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">SUPERVISOR ADI VE SERİ NO:</label>
+              <input class="input" type="text" placeholder="Ad ve seri no" name="sup_ad">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">TELEFON NO:</label>
+              <input class="input" type="text" placeholder="Telefon numarası" name="sup_tel">
+            </div>
+          </div>
+		  
+        </div>
+
+        <br>
+		
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h3 class="title is-4">SUÇ ÖZETİ (Operasyona neyin yol açtığını açıklayın)</h3>
+          <button type="button" class="button is-primary" onclick="makeTextBold()">Bold</button>
+          <textarea class="textarea" placeholder="Warrant eklenebilir." rows="5" name="suc_ozet" id="textarea"></textarea>
+        </div>
+		
+		<br>
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h3 class="title is-4">ŞÜPHELİLER</h3>
+		  
+		<div style="border: 1px solid #E7E03B; padding: 10px;">
+		  <h4 class="title is-4">1. ŞÜPHELİ</h4>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ADI:</label>
+              <input class="input" type="text" placeholder="Şüphelinin adı" name="ad_sup1">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFI (url):</label>
+              <input class="input" type="url" placeholder="i.imgur.com/xxx.png" name="foto_sup1">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">CİNSİYET:</label>
+              <input class="input" type="text" placeholder="Erkek/kadın" name="cin_sup1">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">YAŞ:</label>
+              <input class="input" type="text" placeholder="Şüphelinin yaşı" name="yas_sup1">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ÇETE ÜYESİ:</label>
+              <input class="input" type="text" placeholder="Evet/hayır" name="cete_sup1">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ÇETE:</label>
+              <input class="input" type="text" placeholder="X Çetesi" name="cetesi_sup1">
+            </div>
+          </div>
+		  
+		  	<div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">SUÇ GEÇMİŞİ:</label>
+              <textarea class="textarea" placeholder="Şüphelinin kayda geçen suçları" rows="3" name="suc_sup1" id="textarea"></textarea>
+            </div>
+          </div>
+		
+		 </div>
+		 
+
+		<div style="border: 1px solid #E7E03B; padding: 10px;">
+		  <h4 class="title is-4">2. ŞÜPHELİ</h4>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ADI:</label>
+              <input class="input" type="text" placeholder="Şüphelinin adı" name="ad_sup2">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFI (url):</label>
+              <input class="input" type="url" placeholder="i.imgur.com/xxx.png" name="foto_sup2">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">CİNSİYET:</label>
+              <input class="input" type="text" placeholder="Erkek/kadın" name="cin_sup2">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">YAŞ:</label>
+              <input class="input" type="text" placeholder="Şüphelinin yaşı" name="yas_sup2">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ÇETE ÜYESİ:</label>
+              <input class="input" type="text" placeholder="Evet/hayır" name="cete_sup2">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ÇETE:</label>
+              <input class="input" type="text" placeholder="X Çetesi" name="cetesi_sup2">
+            </div>
+          </div>
+		  
+		  	<div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">SUÇ GEÇMİŞİ:</label>
+              <textarea class="textarea" placeholder="Şüphelinin kayda geçen suçları" rows="3" name="suc_sup2" id="textarea"></textarea>
+            </div>
+          </div>
+		
+		 </div>
+		 
+		 
+		 
+		<div style="border: 1px solid #E7E03B; padding: 10px;">
+		  <h4 class="title is-4">3. ŞÜPHELİ</h4>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ADI:</label>
+              <input class="input" type="text" placeholder="Şüphelinin adı" name="ad_sup3">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFI (url):</label>
+              <input class="input" type="url" placeholder="i.imgur.com/xxx.png" name="foto_sup3">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">CİNSİYET:</label>
+              <input class="input" type="text" placeholder="Erkek/kadın" name="cin_sup3">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">YAŞ:</label>
+              <input class="input" type="text" placeholder="Şüphelinin yaşı" name="yas_sup3">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ÇETE ÜYESİ:</label>
+              <input class="input" type="text" placeholder="Evet/hayır" name="cete_sup3">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ÇETE:</label>
+              <input class="input" type="text" placeholder="X Çetesi" name="cetesi_sup3">
+            </div>
+          </div>
+		  
+		  	<div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">SUÇ GEÇMİŞİ:</label>
+              <textarea class="textarea" placeholder="Şüphelinin kayda geçen suçları" rows="3" name="suc_sup3" id="textarea"></textarea>
+            </div>
+          </div>
+		
+		 </div>
+		 
+		<div style="border: 1px solid #E7E03B; padding: 10px;">
+		  <h4 class="title is-4">4. ŞÜPHELİ</h4>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ADI:</label>
+              <input class="input" type="text" placeholder="Şüphelinin adı" name="ad_sup4">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFI (url):</label>
+              <input class="input" type="url" placeholder="i.imgur.com/xxx.png" name="foto_sup4">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">CİNSİYET:</label>
+              <input class="input" type="text" placeholder="Erkek/kadın" name="cin_sup4">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">YAŞ:</label>
+              <input class="input" type="text" placeholder="Şüphelinin yaşı" name="yas_sup4">
+            </div>
+          </div>
+		  
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ÇETE ÜYESİ:</label>
+              <input class="input" type="text" placeholder="Evet/hayır" name="cete_sup4">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ÇETE:</label>
+              <input class="input" type="text" placeholder="X Çetesi" name="cetesi_sup4">
+            </div>
+          </div>
+		  
+		  	<div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">SUÇ GEÇMİŞİ:</label>
+              <textarea class="textarea" placeholder="Şüphelinin kayda geçen suçları" rows="3" name="suc_sup4" id="textarea"></textarea>
+            </div>
+          </div>
+		
+		 </div>
+		 
+		</div>
+		
+		<br>
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+		  <h4 class="title is-4">ŞÜPHELİ ARAÇLAR</h4>
+          <div class="grid-container">
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="Model/renk" name="arac_sup1">
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="Plaka" name="plaka_sup1">
+            </div>
+          </div>
+          <div class="grid-container">
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="Model/renk" name="arac_sup2">
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="Plaka" name="plaka_sup2">
+            </div>
+          </div>
+          <div class="grid-container">
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="Model/renk" name="arac_sup3">
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="Plaka" name="plaka_sup3">
+            </div>
+          </div>	
+          <div class="grid-container">
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="Model/renk" name="arac_sup4">
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="Plaka" name="plaka_sup4">
+            </div>
+          </div>	
+		  
+        </div>
+
+		<br>
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h3 class="title is-4">PLAN (Nasıl gerçekleşmesi gerektiğini açıklayın)</h3>
+          <button type="button" class="button is-primary" onclick="makeTextBold()">Bold</button>
+          <textarea class="textarea" placeholder="Detaylardan bahsedin." rows="10" name="op_plan" id="textarea"></textarea>
+        </div>
+		<br>
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">		
+          <h3 class="title is-4">HARİTA, ROTA (Harita üzerine konumları işaretleyin: Girilecek mülk, kapatılacak yollar, sürüş rotası, dikkat edilmesi gerekenler)</h3>
+		  <a href="https://i.imgur.com/1vxH0TY.png">Örnek</a>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFI (url):</label>
+              <input class="input" type="url" placeholder="i.imgur.com/xxx.png" name="op_harita">
+            </div>
+          </div>
+        </div>		
+		
+		<br>
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h3 class="title is-4">KONUMLAR (Girilecek mülkler vb.)</h3>
+		
+		<div style="border: 1px solid #E7E03B; padding: 10px;">
+		  <h4 class="title is-4">1. KONUM</h4>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ADRES:</label>
+              <input class="input" type="text" placeholder="Kapı no/işletme adı vs." name="adres_kon1">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFLAR (url):</label>
+              <input class="input" type="url" placeholder="Imgur albümü" name="foto_kon1">
+            </div>
+          </div>
+		  	<div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">TANIM:</label>
+              <textarea class="textarea" placeholder="Nasıl bir yer olduğu, dikkat edilmesi gereken yerler, kat planı vb." rows="3" name="tan_kon1" id="textarea"></textarea>
+            </div>
+          </div>
+		
+		 </div>
+		
+		
+		<div style="border: 1px solid #E7E03B; padding: 10px;">
+		  <h4 class="title is-4">2. KONUM</h4>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ADRES:</label>
+              <input class="input" type="text" placeholder="Kapı no/işletme adı vs." name="adres_kon2">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFLAR (url):</label>
+              <input class="input" type="url" placeholder="Imgur albümü" name="foto_kon2">
+            </div>
+          </div>
+		  	<div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">TANIM:</label>
+              <textarea class="textarea" placeholder="Nasıl bir yer olduğu, dikkat edilmesi gereken yerler, kat planı vb." rows="3" name="tan_kon2" id="textarea"></textarea>
+            </div>
+          </div>
+		
+		 </div>
+		 
+		 
+		 
+		<div style="border: 1px solid #E7E03B; padding: 10px;">
+		  <h4 class="title is-4">3. KONUM</h4>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ADRES:</label>
+              <input class="input" type="text" placeholder="Kapı no/işletme adı vs." name="adres_kon3">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFLAR (url):</label>
+              <input class="input" type="url" placeholder="Imgur albümü" name="foto_kon3">
+            </div>
+          </div>
+		  	<div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">TANIM:</label>
+              <textarea class="textarea" placeholder="Nasıl bir yer olduğu, dikkat edilmesi gereken yerler, kat planı vb." rows="3" name="tan_kon3" id="textarea"></textarea>
+            </div>
+          </div>
+		
+		 </div>
+		
+		<div style="border: 1px solid #E7E03B; padding: 10px;">
+		  <h4 class="title is-4">4. KONUM</h4>
+		   <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">ADRES:</label>
+              <input class="input" type="text" placeholder="Kapı no/işletme adı vs." name="adres_kon4">
+            </div>
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FOTOĞRAFLAR (url):</label>
+              <input class="input" type="url" placeholder="Imgur albümü" name="foto_kon4">
+            </div>
+          </div>
+		  	<div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">TANIM:</label>
+              <textarea class="textarea" placeholder="Nasıl bir yer olduğu, dikkat edilmesi gereken yerler, kat planı vb." rows="3" name="tan_kon4" id="textarea"></textarea>
+            </div>
+          </div>
+		
+		 </div>
+        </div>	
+		
+		<br>
+		
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h3 class="title is-4">MEMUR GÜVENLİĞİ (Güvenlik risklerini listeleyin, açıklayın)</h3>
+          <button type="button" class="button is-primary" onclick="makeTextBold()">Bold</button>
+          <textarea class="textarea" placeholder="Silahlı direniş, bekçi köpeği, yoğun trafik akışı vs." rows="5" name="op_guv" id="textarea"></textarea>
+        </div>
+
+        <br>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">BBCode'u Kopyala</button>
+          </div>
+          <div class="control">
+            <button type="reset" class="button is-link is-light">Formu Temizle</button>
+          </div>
+        </div>
+		<br>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("form")
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault()
+      const formData = new FormData(this)
+      const BBCODE = `
+
+[center][b]Los Santos Police Department[/b]
+[i][b]TACTICAL OPERATION PLAN[/b][/i][/center]
+
+[table=#151515,white][tr][tdwidth=#424242,#ffffff,top,left,10,6]
+[size=85][b]Not:[/b] Bu form arama ve tutuklama emri uygulaması için hazırlanacaktır. Birim Supervisorlerine 24 saat içinde planın birer kopyası ulaştırılmalıdır. Plan, operasyondan bir saat önce diğer personelin erişimine açılır.[/size]
+[/tdwidth][/tr][/table]
+ㅤㅤㅤㅤㅤㅤ
+[table=#151515,white]
+[tr][tdwidth=#424242,#ffffff,top,left,10,3]
+[size=85][b]ㅤOPERASYON TÜRÜ: [/b]${formData.get("op_tur")}[/size]
+[/tdwidth][/tr]
+[tr][tdwidth=#424242,#ffffff,top,left,10,3]
+[size=85][b]ㅤYÜRÜTEN DIV. YA DA BİRİM: [/b]${formData.get("yur_div")}[/size]
+[/tdwidth][/tr][/table]
+ㅤ
+[table=#151515,white][tr][tdwidth=#424242,#ffffff,top,left,6,3]
+[size=85][b]ㅤSORUŞTURMACI ADI VE SERİ NO: [/b]${formData.get("sor_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,4,3]
+[size=85][b]ㅤTELEFON NO: [/b]${formData.get("sor_tel")}[/size]
+[/tdwidth][/tr]
+[tr][tdwidth=#424242,#ffffff,top,left,6,3]
+[size=85][b]ㅤSUPERVISOR ADI VE SERİ NO: [/b]${formData.get("sup_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,4,3]
+[size=85][b]ㅤTELEFON NO: [/b]${formData.get("sup_tel")}[/size]
+[/tdwidth][/tr][/table]
+ㅤ
+[table=#151515,white]
+[tr][tdwidth=#424242,#CECECE,top,left,10,3]
+[size=85][b]ㅤSUÇ ÖZETİ (Operasyona neyin yol açtığını açıklayın)[/b][/size]
+[/tdwidth][/tr]
+[tr][tdwidth=#424242,#ffffff,top,left,10,12]
+[size=85]${formData.get("suc_ozet")}
+[/size][/tdwidth][/tr][/table]
+ㅤ
+[table=#151515,white]
+[tr][tdwidth=#424242,#CECECE,top,left,12,3]
+[size=85][b]ㅤŞÜPHELİLER[/b][/size]
+[/tdwidth][/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#ffffff,#ffffff,top,left,12,1]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#F1EEA9,top,left,1,2]
+[size=85][b]ㅤ1. ŞÜPHELİ[/b][/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#F1EEA9,top,left,4,2]
+[size=85][b]ㅤADI:[/b] ${formData.get("ad_sup1")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,2,2]
+[size=85][b]ㅤCİNSİYET:[/b] ${formData.get("cin_sup1")}[/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#ffffff,top,left,1,2]
+[size=85][b]ㅤYAŞ:[/b] ${formData.get("yas_sup1")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,2,2]
+[size=85][b]ㅤÇETE ÜYESİ:[/b] ${formData.get("cete_sup1")}[/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#ffffff,top,left,4,2]
+[size=85][b]ㅤÇETE:[/b] ${formData.get("cetesi_sup1")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,5,2]
+[size=85][b]ㅤSUÇ GEÇMİŞİ:[/b]
+${formData.get("suc_sup1")}
+
+[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+
+[tdwidth=#ffffff,#ffffff,top,left,1,1]
+[imgsize=148,148]${formData.get("foto_sup1")}[/imgsize]
+[/tdwidth]
+[/tr][/table]
+
+[hr][/hr]
+
+[table=#151515,white][tr]
+[tdwidth=#ffffff,#ffffff,top,left,12,1]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#F1EEA9,top,left,1,2]
+[size=85][b]ㅤ2. ŞÜPHELİ[/b][/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#F1EEA9,top,left,4,2]
+[size=85][b]ㅤADI:[/b] ${formData.get("ad_sup2")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,2,2]
+[size=85][b]ㅤCİNSİYET:[/b] ${formData.get("cin_sup2")}[/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#ffffff,top,left,1,2]
+[size=85][b]ㅤYAŞ:[/b] ${formData.get("yas_sup2")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,2,2]
+[size=85][b]ㅤÇETE ÜYESİ:[/b] ${formData.get("cete_sup2")}[/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#ffffff,top,left,4,2]
+[size=85][b]ㅤÇETE:[/b] ${formData.get("cetesi_sup2")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,5,2]
+[size=85][b]ㅤSUÇ GEÇMİŞİ:[/b]
+${formData.get("suc_sup2")}
+
+[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+
+[tdwidth=#ffffff,#ffffff,top,left,1,1]
+[imgsize=148,148]${formData.get("foto_sup2")}[/imgsize]
+[/tdwidth]
+[/tr][/table]
+
+[hr][/hr]
+
+[table=#151515,white][tr]
+[tdwidth=#ffffff,#ffffff,top,left,12,1]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#F1EEA9,top,left,1,2]
+[size=85][b]ㅤ3. ŞÜPHELİ[/b][/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#F1EEA9,top,left,4,2]
+[size=85][b]ㅤADI:[/b] ${formData.get("ad_sup3")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,2,2]
+[size=85][b]ㅤCİNSİYET:[/b] ${formData.get("cin_sup3")}[/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#ffffff,top,left,1,2]
+[size=85][b]ㅤYAŞ:[/b] ${formData.get("yas_sup3")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,2,2]
+[size=85][b]ㅤÇETE ÜYESİ:[/b] ${formData.get("cete_sup3")}[/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#ffffff,top,left,4,2]
+[size=85][b]ㅤÇETE:[/b] ${formData.get("cetesi_sup3")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,5,2]
+[size=85][b]ㅤSUÇ GEÇMİŞİ:[/b]
+${formData.get("suc_sup3")}
+
+[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+
+[tdwidth=#ffffff,#ffffff,top,left,1,1]
+[imgsize=148,148]${formData.get("foto_sup3")}[/imgsize]
+[/tdwidth]
+[/tr][/table]
+
+[hr][/hr]
+
+[table=#151515,white][tr]
+[tdwidth=#ffffff,#ffffff,top,left,12,1]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#F1EEA9,top,left,1,2]
+[size=85][b]ㅤ4. ŞÜPHELİ[/b][/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#F1EEA9,top,left,4,2]
+[size=85][b]ㅤADI:[/b] ${formData.get("ad_sup4")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,2,2]
+[size=85][b]ㅤCİNSİYET:[/b] ${formData.get("cin_sup4")}[/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#ffffff,top,left,1,2]
+[size=85][b]ㅤYAŞ:[/b] ${formData.get("yas_sup4")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,2,2]
+[size=85][b]ㅤÇETE ÜYESİ:[/b] ${formData.get("cete_sup4")}[/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#ffffff,top,left,4,2]
+[size=85][b]ㅤÇETE:[/b] ${formData.get("cetesi_sup4")}[/size]
+[/tdwidth]
+[/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,5,2]
+[size=85][b]ㅤSUÇ GEÇMİŞİ:[/b]
+${formData.get("suc_sup4")}
+
+[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+
+[tdwidth=#ffffff,#ffffff,top,left,1,1]
+[imgsize=148,148]${formData.get("foto_sup4")}[/imgsize]
+[/tdwidth]
+[/tr][/table]
+ㅤ
+[table=#151515,white]
+[tr][tdwidth=#424242,#CECECE,top,left,12,3]
+[size=85][b]ㅤŞÜPHELİ ARAÇLAR[/b][/size]
+[/tdwidth][/tr][/table]
+
+[table=#151515,white][tr][tdwidth=#424242,#ffffff,top,left,4,3]
+[size=85][b]ㅤMODEL/RENK[/b][/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85][b]ㅤPLAKA[/b][/size]
+[/tdwidth]
+[/tr]
+
+[tr][tdwidth=#424242,#ffffff,top,left,4,3]
+[size=85]ㅤ${formData.get("arac_sup1")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("plaka_sup1")}[/size]
+[/tdwidth][/tr]
+
+[tr][tdwidth=#424242,#ffffff,top,left,4,3]
+[size=85]ㅤ${formData.get("arac_sup2")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("plaka_sup2")}[/size]
+[/tdwidth][/tr]
+
+[tr][tdwidth=#424242,#ffffff,top,left,4,3]
+[size=85]ㅤ${formData.get("arac_sup3")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("plaka_sup3")}[/size]
+[/tdwidth][/tr]
+
+[tr][tdwidth=#424242,#ffffff,top,left,4,3]
+[size=85]ㅤ${formData.get("arac_sup4")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("plaka_sup4")}[/size]
+[/tdwidth][/tr]
+[/table]
+ㅤ
+[table=#151515,white]
+[tr][tdwidth=#424242,#CECECE,top,left,10,3]
+[size=85][b]ㅤPLAN (Nasıl gerçekleşmesi gerektiğini açıklayın)[/b][/size]
+[/tdwidth][/tr]
+[tr][tdwidth=#424242,#ffffff,top,left,10,12]
+[size=85]${formData.get("op_plan")}
+[/size][/tdwidth][/tr][/table]
+ㅤ
+[table=#151515,white]
+[tr][tdwidth=#424242,#CECECE,top,left,10,3]
+[size=85][b]ㅤHARİTA, ROTA (Harita üzerine konumları işaretleyin: Girilecek mülk, kapatılacak yollar, sürüş rotası, dikkat edilmesi gerekenler)[/b][/size]
+[/tdwidth][/tr]
+[tr][tdwidth=#424242,#ffffff,top,left,10,2]
+[img]${formData.get("op_harita")}[/img]
+[/tdwidth][/tr][/table]
+ㅤ
+[table=#151515,white]
+[tr][tdwidth=#424242,#CECECE,top,left,10,3]
+[size=85][b]ㅤKONUMLAR (Girilecek mülkler vb.)[/b][/size]
+[/tdwidth][/tr][/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#F1EEA9,top,left,3,2]
+[size=85][b]ㅤ1. KONUM[/b][/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#F1EEA9,top,left,8,2]
+[size=85][b]ADRES:[/b] ${formData.get("adres_kon1")}[/size]
+[/tdwidth]
+[/tr]
+[tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,3,2]
+[url=${formData.get("foto_kon1")}]FOTOĞRAFLAR[/url]
+[/tdwidth]
+[tdwidth=#9F9F9F,#ffffff,top,left,8,2]
+[size=85][b]TANIMLAYIN:[/b] ${formData.get("tan_kon1")}[/size]
+[/tdwidth]
+[/tr]
+[/table]
+
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#F1EEA9,top,left,3,2]
+[size=85][b]ㅤ2. KONUM[/b][/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#F1EEA9,top,left,8,2]
+[size=85][b]ADRES:[/b] ${formData.get("adres_kon2")}[/size]
+[/tdwidth]
+[/tr]
+[tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,3,2]
+[url=${formData.get("foto_kon2")}]FOTOĞRAFLAR[/url]
+[/tdwidth]
+[tdwidth=#9F9F9F,#ffffff,top,left,8,2]
+[size=85][b]TANIMLAYIN:[/b] ${formData.get("tan_kon2")}[/size]
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#F1EEA9,top,left,3,2]
+[size=85][b]ㅤ3. KONUM[/b][/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#F1EEA9,top,left,8,2]
+[size=85][b]ADRES:[/b] ${formData.get("adres_kon3")}[/size]
+[/tdwidth]
+[/tr]
+[tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,3,2]
+[url=${formData.get("foto_kon3")}]FOTOĞRAFLAR[/url]
+[/tdwidth]
+[tdwidth=#9F9F9F,#ffffff,top,left,8,2]
+[size=85][b]TANIMLAYIN:[/b] ${formData.get("tan_kon3")}[/size]
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#151515,white][tr]
+[tdwidth=#9F9F9F,#F1EEA9,top,left,3,2]
+[size=85][b]ㅤ4. KONUM[/b][/size]
+[/tdwidth]
+
+[tdwidth=#9F9F9F,#F1EEA9,top,left,8,2]
+[size=85][b]ADRES:[/b] ${formData.get("adres_kon4")}[/size]
+[/tdwidth]
+[/tr]
+[tr]
+[tdwidth=#9F9F9F,#ffffff,top,left,3,2]
+[url=${formData.get("foto_kon4")}]FOTOĞRAFLAR[/url]
+[/tdwidth]
+[tdwidth=#9F9F9F,#ffffff,top,left,8,2]
+[size=85][b]TANIMLAYIN:[/b] ${formData.get("tan_kon4")}[/size]
+[/tdwidth]
+[/tr]
+[/table]
+ㅤ
+[table=#151515,white]
+[tr][tdwidth=#424242,#CECECE,top,left,10,3]
+[size=85][b]ㅤMEMUR GÜVENLİĞİ (Güvenlik risklerini listeleyin, açıklayın)[/b][/size]
+[/tdwidth][/tr]
+[tr][tdwidth=#424242,#ffffff,top,left,10,12]
+[size=85]${formData.get("op_guv")} 
+[/size][/tdwidth][/tr][/table]
+      `
+
+      navigator.clipboard.writeText(BBCODE).then(() => alert("BBCode başarıyla kopyalandı!"))
+    })
+
+    function makeTextBold() {
+        const textarea = document.getElementById('textarea');
+
+        const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+
+        const newText = "[b]" + selectedText + "[/b]";
+
+        textarea.setRangeText(newText, textarea.selectionStart, textarea.selectionEnd, 'end');
+
+        textarea.setSelectionRange(
+            textarea.selectionStart + 3, 
+            textarea.selectionEnd + 3    
+        );
+    }
+
+    const html = document.getElementsByTagName('html')[0];
+    html.dataset.theme = localStorage.getItem("theme")
+    function toggleTheme() {
+      if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "dark")
+        html.dataset.theme = "dark"
+      } else {
+        const currentTheme = localStorage.getItem("theme")
+        if (currentTheme === "light") {
+          localStorage.setItem("theme", "dark")
+          html.dataset.theme = "dark";
+        }
+  
+        if (currentTheme === "dark") {
+          localStorage.setItem("theme", "light")
+          html.dataset.theme = "light"
+        }
+      }
+    }
+  </script>
+</body>
+</html>
