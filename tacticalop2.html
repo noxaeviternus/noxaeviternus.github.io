@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tactical Operation Plan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack@0.8.1/dist/hack.min.css">
+
+
+
+<style>
+    html {
+      transition: color 300ms, background-color 300ms !important;
+    }
+    html[data-theme='dark'] {
+  background-color: black;
+  color: white;
+    }
+    .divide-wrapper div {
+      border-top: 2px solid #e2e2e2;
+    }
+	.checkbox {
+		width: 300px;
+		}
+	
+	#checkbox-group {
+	 columns: 3;
+     -webkit-columns: 3;
+     width: 100%;
+	 }
+	 
+	 
+.grid-container {
+  display: grid;
+  grid-template-columns: 150px 200px 200px;
+    grid-gap: 1px;
+}
+
+.grid-item {
+  padding: 4px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <h1 class="title" style="text-align: center;">Tactical Operation Plan</h1>
+      <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
+      <br>
+      <br>
+      <form id="form">
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+		<p><b>Not:</b> Talepleri karşılamayı kabul eden birimleri doldurun. Bildirimler email veya telefon üzerinden yapılabilir. Bildirim sağlandığı sırada operasyon planının kopyası ulaştırılmalıdır</p>
+
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">AREA PATROL DIV.</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="area_patrol_ad">
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="area_patrol_tar">
+            </div>
+          </div>
+		  
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">METROPOLITAN DIV.</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="metro_ad">
+            </div>
+			<div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="metro_tar">
+            </div>
+          </div>
+		  
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">AIR SUPPORT DIV.</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="air_ad">
+            </div>
+			<div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="air_tar">
+            </div>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">AREA GIT</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="git_ad">
+            </div>
+			<div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="git_tar">
+            </div>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">AREA DETECTIVE DIV.</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="det_ad">
+            </div>
+			<div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="det_tar">
+            </div>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">REGIONAL TRAFFIC DIV.</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="traf_ad">
+            </div>
+			<div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="traf_tar">
+            </div>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FORENSIC SCIENCE DIV.</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="fsd_ad">
+            </div>
+			<div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="fsd_tar">
+            </div>
+          </div>
+		  
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">FIRE DEP.</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="fire_ad">
+            </div>
+			<div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="fire_tar">
+            </div>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <label class="label" style="font-size: 12px;">DİĞER</label>
+            </div>
+            <div class="grid-item">
+              <input class="input" type="text" placeholder="John Doe, PO III, 44444" name="diger_ad">
+            </div>
+			<div class="grid-item">
+              <input class="input" type="text" placeholder="GG/AA/YYYY SSDD" name="diger_tar">
+            </div>
+          </div>
+		  
+		  
+        </div>
+
+        <br>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">BBCode'u Kopyala</button>
+          </div>
+          <div class="control">
+            <button type="reset" class="button is-link is-light">Formu Temizle</button>
+          </div>
+        </div>
+		<br>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("form")
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault()
+      const formData = new FormData(this)
+      const BBCODE = `
+
+[table=#151515,white]
+[tr][tdwidth=#424242,#CECECE,top,left,10,3]
+[size=85][b]ㅤBİLDİRİM (Operasyona dahil olan ya da haber edilen birimler/kurumlar)[/b][/size]
+[/tdwidth][/tr][/table]
+
+[table=#151515,white]
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85][b]ㅤBİLDİRİMİ ALAN[/b][/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85][b]ㅤİSİM, RÜTBE, SERİ NO[/b][/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85][b]ㅤTARİH/ZAMAN[/b][/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤAREA PATROL DIV.[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("area_patrol_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("area_patrol_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤMETROPOLITAN DIV.[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("metro_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("metro_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤAIR SUPPORT DIV.[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("air_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("air_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤAREA GIT[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("git_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("git_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤAREA DETECTIVE DIV.[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("det_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("det_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤREGIONAL TRAFFIC DIV.[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("traf_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("traf_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤFORENSIC SCIENCE DIV.[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("fsd_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("fsd_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤFIRE DEP.[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("fire_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("fire_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[tr]
+[tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤDİĞER[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,5,3]
+[size=85]ㅤ${formData.get("diger_ad")}[/size]
+[/tdwidth][tdwidth=#424242,#ffffff,top,left,3,3]
+[size=85]ㅤ${formData.get("diger_tar")}[/size]
+[/tdwidth]
+[/tr]
+
+[/table]
+ㅤ
+[table=#151515,white][tr][tdwidth=#424242,#ffffff,top,left,10,6]
+[size=85][b]Not:[/b] Bildirimler email veya telefon üzerinden yapılabilir. Bildirim sağlandığı sırada operasyon planının kopyası ulaştırılmalıdır.[/size]
+[/tdwidth][/tr][/table]
+      `
+
+      navigator.clipboard.writeText(BBCODE).then(() => alert("BBCode başarıyla kopyalandı!"))
+    })
+
+    function makeTextBold() {
+        const textarea = document.getElementById('textarea');
+
+        const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+
+        const newText = "[b]" + selectedText + "[/b]";
+
+        textarea.setRangeText(newText, textarea.selectionStart, textarea.selectionEnd, 'end');
+
+        textarea.setSelectionRange(
+            textarea.selectionStart + 3, 
+            textarea.selectionEnd + 3    
+        );
+    }
+
+    const html = document.getElementsByTagName('html')[0];
+    html.dataset.theme = localStorage.getItem("theme")
+    function toggleTheme() {
+      if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "dark")
+        html.dataset.theme = "dark"
+      } else {
+        const currentTheme = localStorage.getItem("theme")
+        if (currentTheme === "light") {
+          localStorage.setItem("theme", "dark")
+          html.dataset.theme = "dark";
+        }
+  
+        if (currentTheme === "dark") {
+          localStorage.setItem("theme", "light")
+          html.dataset.theme = "light"
+        }
+      }
+    }
+  </script>
+</body>
+</html>
