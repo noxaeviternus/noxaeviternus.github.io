@@ -1,0 +1,1174 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    html {
+      transition: color 300ms, background-color 300ms !important;
+    }
+    html[data-theme='dark'] {
+      filter: invert(1) hue-rotate(180deg) !important;
+    }
+    .divide-wrapper div {
+      border-top: 2px solid #e2e2e2;
+    }
+	.checkbox {
+		width: 400px;
+		rows: 5
+		}
+	
+	#checkbox-group {
+	 columns: 3;
+	-webkit-columns: 3;
+     width: 100%;
+	 height: content
+	 }
+	 	.texa {
+		width: 50px;
+		}
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 1200px;">
+      <h1 class="title" style="text-align: center;">SAHP P2</h1>
+      <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
+      <br>
+      <br>
+      <form id="form">
+        <div style="border:1px solid black; padding: 10px;">
+          <h1 class="title is-4">PROPERTY DAMAGE</h1>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">SAHİBİNİN ADI</label>
+              <input class="input" type="text" placeholder="Text input" name="sahib_ad">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">SAHİBİNİN ADRESİ</label>
+              <input class="input" type="text" placeholder="Text input" name="sahib_adres">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">BİLDİRİLDİ</label>
+                  <input type="checkbox" name="bild" value="bild">
+            </div>
+          </div>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">HASARIN AÇIKLAMASI</label>
+              <input class="input" type="text" placeholder="Text input" name="hasar_aciklama">
+            </div>
+          </div>
+        </div>
+
+        <br>
+		
+        <div id="checkbox-group" style="border: 0px solid #e2e2e2; padding: 0px;">
+		
+
+		<div style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap;">
+		
+		<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">| 1 | 2 | 3 | ANA KAZA FAKTÖRÜ</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="akf11" value="akf11">
+				  <input type="checkbox" name="akf21" value="akf21">
+				  <input type="checkbox" name="akf31" value="akf31">
+                  <b>A</b> SACK İHLALİ: <input class="texa" type="text" placeholder="Madde" name="akfmadde"> - CEZA <input type="checkbox" name="akfc" value="akfc">
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="akf12" value="akf12">
+				  <input type="checkbox" name="akf22" value="akf22">
+				  <input type="checkbox" name="akf32" value="akf32">
+                  <b>B</b> DİĞER UYGUN OLMAYAN SÜRÜŞ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="akf13" value="akf13">
+				  <input type="checkbox" name="akf23" value="akf23">
+				  <input type="checkbox" name="akf33" value="akf33">
+                  <b>C</b> SÜRÜCÜ İLE ALAKASIZ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="akf14" value="akf14">
+				  <input type="checkbox" name="akf24" value="akf24">
+				  <input type="checkbox" name="akf34" value="akf34">
+                  <b>D</b> BİLİNMİYOR
+                </label>
+              </div>
+            </fieldset>
+		
+		
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">HAVA</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="h1" value="h1">
+                  <b>A</b> AÇIK
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="h2" value="h2">
+                  <b>B</b> BULUTLU
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="h3" value="h3">
+                  <b>C</b> YAĞMURLU
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="h4" value="h4">
+                  <b>D</b> KARLI
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="h5" value="h5">
+                  <b>E</b> SİS / GÖRÜŞ MESAFESİ
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="h6" value="h6">
+                  <b>F</b> RÜZGAR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="h7" value="h7">
+                  <b>G</b> DİĞER
+                </label>
+              </div>
+            </fieldset>
+			
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">AYDINLATMA</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="a1" value="a1">
+                  <b>A</b> GÜNDÜZ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="a2" value="a2">
+                  <b>B</b> ŞAFAK
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="a3" value="a3">
+                  <b>C</b> KARANLIK - SOKAK LAMBASI
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="a4" value="a4">
+                  <b>D</b> KARANLIK - SOKAK LAMBASI YOK
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="a5" value="a5">
+                  <b>E</b> KARANLIK - SOKAK LAMBASI ÇALIŞMIYOR
+                </label>
+              </div>
+            </fieldset>
+			
+			
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">YOL YÜZEYİ</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="y1" value="y1">
+                  <b>A</b> KURU
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="y2" value="y2">
+                  <b>B</b> ISLAK
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="y3" value="y3">
+                  <b>C</b> KARLI - BUZLU
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="y4" value="y4">
+                  <b>D</b> KAYGAN (ÇAMURLU, YAĞLI, VB.)
+                </label>
+              </div>
+            </fieldset>
+			
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">YOL KOŞULLARI</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="yk1" value="yk1">
+                  <b>A</b> ÇUKURLAR, DERİN OYUKLAR
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="yk2" value="yk2">
+                  <b>B</b> GEVŞEK DOLGU
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="yk3" value="yk3">
+                  <b>C</b> TIKANIKLIK
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="yk4" value="yk4">
+                  <b>D</b> İNŞA - ONARIM ALANI
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="yk5" value="yk5">
+                  <b>E</b> DARALTILMIŞ YOL
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="yk6" value="yk6">
+                  <b>F</b> SEL
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="yk7" value="yk7">
+                  <b>G</b> OLAĞANÜSTÜ DURUM YOK
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="yk8" value="yk8">
+                  <b>H</b> DİĞER
+                </label>
+              </div>
+            </fieldset>
+			
+          </div>
+		  
+		<div style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap;">
+
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">TRAFİK İŞARETLERİ / IŞIK</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="t1" value="t1">
+                  <b>A</b> ÇALIŞIYORLAR
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="t2" value="t2">
+                  <b>B</b> ÇALIŞMIYORLAR
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="t3" value="t3">
+                  <b>C</b> GÖRÜNMÜYOR
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="t4" value="t4">
+                  <b>D</b> MEVCUT DEĞİL
+                </label>
+              </div>
+            </fieldset>
+			
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">KAZA TÜRÜ</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="k1" value="k1">
+                  <b>A</b> KAFA KAFAYA
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="k2" value="k2">
+                  <b>B</b> PARALEL
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="k3" value="k3">
+                  <b>C</b> ARKADAN
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="k4" value="k4">
+                  <b>D</b> YANDAN
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="k5" value="k5">
+                  <b>E</b> NESNEYE ÇARPMA
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="k6" value="k6">
+                  <b>F</b> DEVRİLME
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="k7" value="k7">
+                  <b>G</b> ARAÇ / YAYA
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="k8" value="k8">
+                  <b>H</b> DİĞER
+                </label>
+              </div>
+            </fieldset>
+			
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">MOTORLU TAŞIT ŞUNA ÇARPTI</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="mt1" value="mt1">
+                  <b>A</b> SABİT NESNE
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="mt2" value="mt2">
+                  <b>B</b> YAYA
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="mt3" value="mt3">
+                  <b>C</b> DİĞER MOTORLU TAŞIT
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="mt4" value="mt4">
+                  <b>D</b> DİĞER YOLDAKİ MOTORLU TAŞIT
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="mt5" value="mt5">
+                  <b>E</b> PARK HALİNDEKİ MOTORLU TAŞIT
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="mt6" value="mt6">
+                  <b>F</b> TREN
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="mt7" value="mt7">
+                  <b>G</b> BİSİKLET
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="mt8" value="mt8">
+                  <b>H</b> HAYVAN
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="mt9" value="mt9">
+                  <b>I</b> DİĞER NESNE
+                </label>
+              </div>
+            </fieldset>
+			
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">| 1 | 2 | 3 | SARHOŞLUK - UYUŞTURUCU</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="su11" value="su11">
+				  <input type="checkbox" name="su21" value="su21">
+				  <input type="checkbox" name="su31" value="su31">
+                  <b>A</b> İÇMEMİŞ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="su12" value="su12">
+				  <input type="checkbox" name="su22" value="su22">
+				  <input type="checkbox" name="su32" value="su32">
+                  <b>B</b> İÇMİŞ - ETKİ ALTINDA
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="su13" value="su13">
+				  <input type="checkbox" name="su23" value="su23">
+				  <input type="checkbox" name="su33" value="su33">
+                  <b>C</b> İÇMİŞ - ETKİ ALTINDA DEĞİL
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="su14" value="su14">
+				  <input type="checkbox" name="su24" value="su24">
+				  <input type="checkbox" name="su34" value="su34">
+                  <b>D</b> İÇMİŞ - SAPTANAMADI
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="su15" value="su15">
+				  <input type="checkbox" name="su25" value="su25">
+				  <input type="checkbox" name="su35" value="su35">
+                  <b>E</b> UYUŞTURUCU ETKİSİ
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="su16" value="su16">
+				  <input type="checkbox" name="su26" value="su26">
+				  <input type="checkbox" name="su36" value="su36">
+                  <b>F</b> BOZUKLUK - FİZİKSEL
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="su17" value="su17">
+				  <input type="checkbox" name="su27" value="su27">
+				  <input type="checkbox" name="su37" value="su37">
+                  <b>G</b> BOZUKLUK BİLİNMİYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="su18" value="su18">
+				  <input type="checkbox" name="su28" value="su28">
+				  <input type="checkbox" name="su38" value="su38">
+                  <b>H</b> UYKULU / YORGUN
+                </label>
+              </div>
+            </fieldset>
+			
+          </div>
+		  
+        <div style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap;">
+
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">| 1 | 2 | 3 | ÖZEL BİLGİ</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="ob11" value="ob11">
+				  <input type="checkbox" name="ob21" value="ob21">
+				  <input type="checkbox" name="ob31" value="ob31">
+                  <b>A</b> TEHLİKELİ MADDE
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="ob12" value="ob12">
+				  <input type="checkbox" name="ob22" value="ob22">
+				  <input type="checkbox" name="ob32" value="ob32">
+                  <b>B</b> TELEFON, ELDE
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="ob13" value="ob13">
+				  <input type="checkbox" name="ob23" value="ob23">
+				  <input type="checkbox" name="ob33" value="ob33">
+                  <b>C</b> TELEFON, ELDE DEĞİL
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="ob14" value="ob14">
+				  <input type="checkbox" name="ob24" value="ob24">
+				  <input type="checkbox" name="ob34" value="ob34">
+                  <b>D</b> TELEFON KULLANILMADI
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="ob15" value="ob15">
+				  <input type="checkbox" name="ob25" value="ob25">
+				  <input type="checkbox" name="ob35" value="ob35">
+                  <b>E</b> UZUN ARAÇ
+                </label>
+              </div>
+            </fieldset>
+			
+			
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">| 1 | 2 | 3 | DİĞER FAKTÖRLER</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="df11" value="df11">
+				  <input type="checkbox" name="df21" value="df21">
+				  <input type="checkbox" name="df31" value="df31">
+                  <b>A</b> SACK İHLALİ: <input class="texa" type="text" placeholder="Madde" name="amadde"> - CEZA <input type="checkbox" name="dfa" value="dfa">
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="df12" value="df12">
+				  <input type="checkbox" name="df22" value="df22">
+				  <input type="checkbox" name="df32" value="df32">
+                  <b>B</b> SACK İHLALİ: <input class="texa" type="text" placeholder="Madde" name="bmadde"> - CEZA <input type="checkbox" name="dfb" value="dfb">
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="df13" value="df13">
+				  <input type="checkbox" name="df23" value="df23">
+				  <input type="checkbox" name="df33" value="df33">
+                  <b>C</b> SACK İHLALİ: <input class="texa" type="text" placeholder="Madde" name="cmadde"> - CEZA <input type="checkbox" name="dfc" value="dfc">
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="df14" value="df14">
+				  <input type="checkbox" name="df24" value="df24">
+				  <input type="checkbox" name="df34" value="df34">
+                  <b>D</b> GÖRÜŞ KAYBI
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="df15" value="df15">
+				  <input type="checkbox" name="df25" value="df25">
+				  <input type="checkbox" name="df35" value="df35">
+                  <b>E</b> DİKKATSİZLİK
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="df16" value="df16">
+				  <input type="checkbox" name="df26" value="df26">
+				  <input type="checkbox" name="df36" value="df36">
+                  <b>F</b> RAMPAYA GİRİŞ/ÇIKIŞ
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="df17" value="df17">
+				  <input type="checkbox" name="df27" value="df27">
+				  <input type="checkbox" name="df37" value="df37">
+                  <b>G</b> BAŞKA KAZA
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="df18" value="df18">
+				  <input type="checkbox" name="df28" value="df28">
+				  <input type="checkbox" name="df38" value="df38">
+                  <b>H</b> YOLU TANIMIYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="df19" value="df19">
+				  <input type="checkbox" name="df29" value="df29">
+				  <input type="checkbox" name="df39" value="df39">
+                  <b>I</b> HASARLI ARAÇ 419 - CEZA <input type="checkbox" name="dfi" value="dfi">
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="df110" value="df110">
+				  <input type="checkbox" name="df210" value="df210">
+				  <input type="checkbox" name="df310" value="df310">
+                  <b>J</b> KAÇAK ARAÇ
+                </label>
+              </div>
+            </fieldset>
+			
+			
+			<fieldset>
+              <div class="checkbox" style="border:1px solid black; padding: 10px;">
+			  <label class="label" style="font-size: 12px;">| 1 | 2 | 3 | KAZA ÖNCESİ MANEVRA</label>
+                <label class="checkbox">
+                  <input type="checkbox" name="kom11" value="kom11">
+				  <input type="checkbox" name="kom21" value="kom21">
+				  <input type="checkbox" name="kom31" value="kom31">
+                  <b>A</b> DURDU
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="kom12" value="kom12">
+				  <input type="checkbox" name="kom22" value="kom22">
+				  <input type="checkbox" name="kom32" value="kom32">
+                  <b>B</b> DÜZ İLERLİYOR
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="kom13" value="kom13">
+				  <input type="checkbox" name="kom23" value="kom23">
+				  <input type="checkbox" name="kom33" value="kom33">
+                  <b>C</b> YOLDAN ÇIKTI
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="kom14" value="kom14">
+				  <input type="checkbox" name="kom24" value="kom24">
+				  <input type="checkbox" name="kom34" value="kom34">
+                  <b>D</b> SAĞA DÖNÜŞ
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom15" value="kom15">
+				  <input type="checkbox" name="kom25" value="kom25">
+				  <input type="checkbox" name="kom35" value="kom35">
+                  <b>E</b> SOLA DÖNÜŞ
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom16" value="kom16">
+				  <input type="checkbox" name="kom26" value="kom26">
+				  <input type="checkbox" name="kom36" value="kom36">
+                  <b>F</b> U DÖNÜŞÜ
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom17" value="kom17">
+				  <input type="checkbox" name="kom27" value="kom27">
+				  <input type="checkbox" name="kom37" value="kom37">
+                  <b>G</b> GERİ GERİ GİDİYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom18" value="kom18">
+				  <input type="checkbox" name="kom28" value="kom28">
+				  <input type="checkbox" name="kom38" value="kom38">
+                  <b>H</b> YAVAŞLIYOR / DURUYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom19" value="kom19">
+				  <input type="checkbox" name="kom29" value="kom29">
+				  <input type="checkbox" name="kom39" value="kom39">
+                  <b>I</b> DİĞER ARACI SOLLUYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom110" value="kom110">
+				  <input type="checkbox" name="kom210" value="kom210">
+				  <input type="checkbox" name="kom310" value="kom310">
+                  <b>J</b> ŞERİT DEĞİŞTİRİYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom111" value="kom111">
+				  <input type="checkbox" name="kom211" value="kom211">
+				  <input type="checkbox" name="kom311" value="kom311">
+                  <b>K</b> PARK MANEVRASI
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom112" value="kom112">
+				  <input type="checkbox" name="kom212" value="kom212">
+				  <input type="checkbox" name="kom312" value="kom312">
+                  <b>L</b> TRAFİĞE ÇIKIYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom113" value="kom113">
+				  <input type="checkbox" name="kom213" value="kom213">
+				  <input type="checkbox" name="kom313" value="kom313">
+                  <b>M</b> YAYA GEÇİDİNİ GEÇİYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom114" value="kom114">
+				  <input type="checkbox" name="kom214" value="kom214">
+				  <input type="checkbox" name="kom314" value="kom314">
+                  <b>N</b> PARK HALİNDE
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom115" value="kom115">
+				  <input type="checkbox" name="kom215" value="kom215">
+				  <input type="checkbox" name="kom315" value="kom315">
+                  <b>O</b> YOLA KATILIYOR
+                </label>
+				<label class="checkbox">
+                  <input type="checkbox" name="kom116" value="kom116">
+				  <input type="checkbox" name="kom216" value="kom216">
+				  <input type="checkbox" name="kom316" value="kom316">
+                  <b>P</b> TERS ŞERİTTE GİDİYOR
+                </label>
+              </div>
+            </fieldset>
+			
+			
+			
+          </div>
+		
+		</div>
+		
+		<br>
+			 <div class="field column">
+              <label class="label" style="font-size: 12px;">ÇİZİM</label>
+              <input class="input" type="text" placeholder="Link" name="cizim">
+            </div>
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">DİĞER</h1>
+          <button type="button" class="button is-primary" onclick="makeTextBold()">Bold</button>
+          <textarea class="textarea" placeholder="10 lines of textarea" rows="10" name="diger" id="diger"></textarea>
+        </div>
+
+        <br>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">BBCode'u Kopyala</button>
+          </div>
+          <div class="control">
+            <button type="reset" class="button is-link is-light">Formu Temizle</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("form")
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault()
+      const formData = new FormData(this)
+      const BBCODE = `
+
+
+[size=85]STATE OF SAN ANDREAS[/size]
+[size=150][b]TRAFİK KAZASI KODLAMASI[/b][/size]
+[size=100]SAHP 555 Page 2 (Rev. 6-17) OPI 060[/size]
+[hr][/hr]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,0]
+[center][img]https://i.imgur.com/eN7fY0g.png[/img][/center]
+[/tdwidth]
+
+[tdwidth=#ffffff,#ffffff,top,left,20,0]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[size=70][b]SAHİBİNİN ADI[/b][/size]
+${formData.get("sahib_ad")}
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[size=70][b]SAHİBİNİN ADRESİ[/b][/size]
+${formData.get("sahib_adres")}
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,2,5]
+[size=70][b]BİLDİRİLDİ[/b][/size]
+[cb${formData.get("bild") === "bild" ? "c" : ""}]
+
+[/tdwidth]
+
+[/tr]
+
+
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]HASARIN AÇIKLAMASI[/b][/size]
+${formData.get("hasar_aciklama")}
+
+[/tdwidth]
+
+[/tr]
+
+
+[/table]
+
+[/tdwidth]
+
+
+[/tr]
+
+
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#ffffff,#ffffff,top,left,4,0]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[table=#d0dade,white][tr][tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]1[/b][/size]
+${formData.get("akf11") === "akf11" ? "X" : ""}
+${formData.get("akf12") === "akf12" ? "X" : ""}
+${formData.get("akf13") === "akf13" ? "X" : ""}
+${formData.get("akf14") === "akf14" ? "X" : ""}
+${formData.get("akf15") === "akf15" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,0,0]‎[size=85][b]2[/b][/size]
+${formData.get("akf21") === "akf21" ? "X" : ""}
+${formData.get("akf22") === "akf22" ? "X" : ""}
+${formData.get("akf23") === "akf23" ? "X" : ""}
+${formData.get("akf24") === "akf24" ? "X" : ""}
+${formData.get("akf25") === "akf25" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]3[/b][/size]
+${formData.get("akf31") === "akf31" ? "X" : ""}
+${formData.get("akf32") === "akf32" ? "X" : ""}
+${formData.get("akf33") === "akf33" ? "X" : ""}
+${formData.get("akf34") === "akf34" ? "X" : ""}
+${formData.get("akf35") === "akf35" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎[size=75][b]ㅤㅤANA KAZA FAKTÖRÜ[/b][/size]
+‎ [b]A[/b] [size=65]SACK İHLALİ: ${formData.get("akfmadde")} CITED ${formData.get("akfc") === "akfc" ? "✓" : ""}[/size]
+‎ [b]B[/b] [size=65]DİĞER UYGUN OLMAYAN SÜRÜŞ[/size]
+‎ [b]C[/b] [size=65]SÜRÜCÜ İLE ALAKASIZ[/size]
+‎ [b]D[/b] [size=65]BİLİNMİYOR[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+
+[/tr]
+
+
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[center][size=75][b]HAVA[/b][/size][/center][table=#d0dade,white][tr][tdwidth=#ffffff,#ffffff,top,left,0,0]‎${formData.get("h1") === "h1" ? "X" : ""}
+${formData.get("h2") === "h2" ? "X" : ""}
+${formData.get("h3") === "h3" ? "X" : ""}
+${formData.get("h4") === "h4" ? "X" : ""}
+${formData.get("h5") === "h5" ? "X" : ""}
+${formData.get("h6") === "h6" ? "X" : ""}
+${formData.get("h7") === "h7" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎ [b]A[/b] [size=65]AÇIK[/size]
+‎ [b]B[/b] [size=65]BULUTLU[/size]
+‎ [b]C[/b] [size=65]YAĞMURLU[/size]
+‎ [b]D[/b] [size=65]KARLI[/size]
+‎ [b]E[/b] [size=65]SİS / GÖRÜŞ MESAFESİ[/size]
+‎ [b]F[/b] [size=65]RÜZGAR[/size]
+‎ [b]G[/b] [size=65]DİĞER[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[center][size=75][b]AYDINLATMA[/b][/size][/center][table=#d0dade,white][tr][tdwidth=#ffffff,#ffffff,top,left,0,0]‎${formData.get("a1") === "a1" ? "X" : ""}
+${formData.get("a2") === "a2" ? "X" : ""}
+${formData.get("a3") === "a3" ? "X" : ""}
+${formData.get("a4") === "a4" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎ [b]A[/b] [size=65]GÜNDÜZ[/size]
+‎ [b]B[/b] [size=65]ŞAFAK[/size]
+‎ [b]C[/b] [size=65]KARANLIK - SOKAK LAMBASI[/size]
+‎ [b]D[/b] [size=65]KARANLIK - SOKAK LAMBASI YOK[/size]
+‎ [b]E[/b] [size=65]KARANLIK - SOKAK LAMBASI ÇALIŞMIYOR[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[center][size=75][b]YOL YÜZEYİ[/b][/size][/center][table=#d0dade,white][tr][tdwidth=#ffffff,#ffffff,top,left,0,0]‎${formData.get("y1") === "y1" ? "X" : ""}
+${formData.get("y2") === "y2" ? "X" : ""}
+${formData.get("y3") === "y3" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0] [b]A[/b] [size=65]KURU[/size]
+‎ [b]B[/b] [size=65]ISLAK[/size]
+‎ [b]C[/b] [size=65]KARLI - BUZLU[/size]
+‎ [b]D[/b] [size=65]KAYGAN (ÇAMURLU, YAĞLI, VB.)[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[center][size=75][b]YOL KOŞULLARI[/b][/size][/center][table=#d0dade,white][tr][tdwidth=#ffffff,#ffffff,top,left,0,0]‎${formData.get("yk1") === "yk1" ? "X" : ""}
+${formData.get("yk2") === "yk2" ? "X" : ""}
+${formData.get("yk3") === "yk3" ? "X" : ""}
+${formData.get("yk4") === "yk4" ? "X" : ""}
+${formData.get("yk5") === "yk5" ? "X" : ""}
+${formData.get("yk6") === "yk6" ? "X" : ""}
+${formData.get("yk7") === "yk7" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0] [b]A[/b] [size=65]ÇUKURLAR[/size]
+‎ [b]B[/b] [size=65]GEVŞEK DOLGU[/size]
+‎ [b]C[/b] [size=65]TIKANIKLIK[/size]
+‎ [b]D[/b] [size=65]İNŞA - ONARIM ALANI[/size]
+‎ [b]E[/b] [size=65]DARALTILMIŞ YOL[/size]
+‎ [b]F[/b] [size=65]SEL[/size]
+‎ [b]G[/b] [size=65]OLAĞANÜSTÜ DURUM YOK[/size]
+‎ [b]H[/b] [size=65]DİĞER[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+[/tr]
+[/table]
+
+
+
+[/tdwidth]
+
+[tdwidth=#ffffff,#ffffff,top,left,4,0]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[center][size=75][b]TRAFİK İŞARETLERİ / IŞIK[/b][/size][/center][table=#d0dade,white][tr][tdwidth=#ffffff,#ffffff,top,left,0,0]‎${formData.get("t1") === "t1" ? "X" : ""}
+${formData.get("t2") === "t2" ? "X" : ""}
+${formData.get("t3") === "t3" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎ [b]A[/b] [size=65]ÇALIŞIYORLAR[/size]
+‎ [b]B[/b] [size=65]ÇALIŞMIYORLAR[/size]
+‎ [b]C[/b] [size=65]GÖRÜNMÜYOR[/size]
+‎ [b]D[/b] [size=65]MEVCUT DEĞİL[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+
+[/tr]
+
+
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[center][size=75][b]KAZA TÜRÜ[/b][/size][/center][table=#d0dade,white][tr][tdwidth=#ffffff,#ffffff,top,left,0,0]‎${formData.get("k1") === "k1" ? "X" : ""}
+${formData.get("k2") === "k2" ? "X" : ""}
+${formData.get("k3") === "k3" ? "X" : ""}
+${formData.get("k4") === "k4" ? "X" : ""}
+${formData.get("k5") === "k5" ? "X" : ""}
+${formData.get("k6") === "k6" ? "X" : ""}
+${formData.get("k7") === "k7" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎ [b]A[/b] [size=65]KAFA KAFAYA[/size]
+‎ [b]B[/b] [size=65]PARALEL[/size]
+‎ [b]C[/b] [size=65]ARKADAN[/size]
+‎ [b]D[/b] [size=65]YANDAN[/size]
+‎ [b]E[/b] [size=65]NESNEYE ÇARPMA[/size]
+‎ [b]F[/b] [size=65]DEVRİLDİ[/size]
+‎ [b]G[/b] [size=65]ARAÇ / YAYA[/size]
+‎ [b]H[/b] [size=65]DİĞER[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[center][size=75][b]MOTORLU TAŞIT ŞUNA ÇARPTI[/b][/size][/center][table=#d0dade,white][tr][tdwidth=#ffffff,#ffffff,top,left,0,0]‎${formData.get("mt1") === "mt1" ? "X" : ""}
+${formData.get("mt2") === "mt2" ? "X" : ""}
+${formData.get("mt3") === "mt3" ? "X" : ""}
+${formData.get("mt4") === "mt4" ? "X" : ""}
+${formData.get("mt5") === "mt5" ? "X" : ""}
+${formData.get("mt6") === "mt6" ? "X" : ""}
+${formData.get("mt7") === "mt7" ? "X" : ""}
+${formData.get("mt8") === "mt8" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎ [b]A[/b] [size=65]SABİT NESNE[/size]
+‎ [b]B[/b] [size=65]YAYA[/size]
+‎ [b]C[/b] [size=65]DİĞER MOTORLU TAŞIT[/size]
+‎ [b]D[/b] [size=65]DİĞER YOLDAKİ MOTORLU TAŞIT[/size]
+‎ [b]E[/b] [size=65]PARK HALİNDEKİ MOTORLU TAŞIT[/size]
+‎ [b]F[/b] [size=65]TREN[/size]
+‎ [b]G[/b] [size=65]BİSİKLET[/size]
+‎ [b]I[/b] [size=65]HAYVAN[/size]
+‎ [b]J[/b] [size=65]DİĞER NESNE[/size]
+[/tdwidth]
+[/tr][/table]
+[/tdwidth]
+[/tr]
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[table=#d0dade,white][tr][tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]1[/b][/size]
+${formData.get("su11") === "su11" ? "X" : ""}
+${formData.get("su12") === "su12" ? "X" : ""}
+${formData.get("su13") === "su13" ? "X" : ""}
+${formData.get("su14") === "su14" ? "X" : ""}
+${formData.get("su15") === "su15" ? "X" : ""}
+${formData.get("su16") === "su16" ? "X" : ""}
+${formData.get("su17") === "su17" ? "X" : ""}
+${formData.get("su18") === "su18" ? "X" : ""}
+${formData.get("su19") === "su19" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,0,0]‎[size=85][b]2[/b][/size]
+${formData.get("su21") === "su21" ? "X" : ""}
+${formData.get("su22") === "su22" ? "X" : ""}
+${formData.get("su23") === "su23" ? "X" : ""}
+${formData.get("su24") === "su24" ? "X" : ""}
+${formData.get("su25") === "su25" ? "X" : ""}
+${formData.get("su26") === "su26" ? "X" : ""}
+${formData.get("su27") === "su27" ? "X" : ""}
+${formData.get("su28") === "su28" ? "X" : ""}
+${formData.get("su29") === "su29" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]3[/b][/size]
+${formData.get("su31") === "su31" ? "X" : ""}
+${formData.get("su32") === "su32" ? "X" : ""}
+${formData.get("su33") === "su33" ? "X" : ""}
+${formData.get("su34") === "su34" ? "X" : ""}
+${formData.get("su35") === "su35" ? "X" : ""}
+${formData.get("su36") === "su36" ? "X" : ""}
+${formData.get("su37") === "su37" ? "X" : ""}
+${formData.get("su38") === "su38" ? "X" : ""}
+${formData.get("su39") === "su39" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎[size=75][b]ㅤㅤSARHOŞLUK - UYUŞTURUCU[/b][/size]
+‎ [b]A[/b] [size=65]İÇMEMİŞ[/size]
+‎ [b]B[/b] [size=65]İÇMİŞ - ETKİ ALTINDA[/size]
+‎ [b]C[/b] [size=65]İÇMİŞ - ETKİ ALTINDA DEĞİL[/size]
+‎ [b]D[/b] [size=65]İÇMİŞ - SAPTANAMADI[/size]
+‎ [b]E[/b] [size=65]UYUŞTURUCU ETKİSİ[/size]
+‎ [b]F[/b] [size=65]BOZUKLUK - FİZİKSEL[/size]
+‎ [b]G[/b] [size=65]BOZUKLUK - BİLİNMİYOR[/size]
+‎ [b]H[/b] [size=65]UYKULU / YORGUN[/size]
+[/tdwidth]
+[/tr][/table]
+
+
+[/tdwidth]
+[/tr]
+[/table]
+
+
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,4,0]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[table=#d0dade,white][tr][tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]1[/b][/size]
+${formData.get("ob11") === "ob11" ? "X" : ""}
+${formData.get("ob12") === "ob12" ? "X" : ""}
+${formData.get("ob13") === "ob13" ? "X" : ""}
+${formData.get("ob14") === "ob14" ? "X" : ""}
+${formData.get("ob15") === "ob15" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,0,0]‎[size=85][b]2[/b][/size]
+${formData.get("ob21") === "ob21" ? "X" : ""}
+${formData.get("ob22") === "ob22" ? "X" : ""}
+${formData.get("ob23") === "ob23" ? "X" : ""}
+${formData.get("ob24") === "ob24" ? "X" : ""}
+${formData.get("ob25") === "ob25" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]3[/b][/size]
+${formData.get("ob31") === "ob31" ? "X" : ""}
+${formData.get("ob32") === "ob32" ? "X" : ""}
+${formData.get("ob33") === "ob33" ? "X" : ""}
+${formData.get("ob34") === "ob34" ? "X" : ""}
+${formData.get("ob35") === "ob35" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎[size=75][b]ㅤㅤÖZEL BİLGİ[/b][/size]
+‎ [b]A[/b] [size=65]TEHLİKELİ MADDE[/size]
+‎ [b]B[/b] [size=65]TELEFON, ELDE[/size]
+‎ [b]C[/b] [size=65]TELEFON, ELDE DEĞİL[/size]
+‎ [b]D[/b] [size=65]TELEFON KULLANILMADI[/size]
+‎ [b]E[/b] [size=65]UZUN ARAÇ[/size]
+[/tdwidth]
+[/tr][/table]
+
+
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[table=#d0dade,white][tr][tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]1[/b][/size]
+${formData.get("df11") === "df11" ? "X" : ""}
+${formData.get("df12") === "df12" ? "X" : ""}
+${formData.get("df13") === "df13" ? "X" : ""}
+${formData.get("df14") === "df14" ? "X" : ""}
+${formData.get("df15") === "df15" ? "X" : ""}
+${formData.get("df16") === "df16" ? "X" : ""}
+${formData.get("df17") === "df17" ? "X" : ""}
+${formData.get("df18") === "df18" ? "X" : ""}
+${formData.get("df19") === "df19" ? "X" : ""}
+${formData.get("df110") === "df110" ? "X" : ""}
+${formData.get("df111") === "df111" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,0,0]‎[size=85][b]2[/b][/size]
+${formData.get("df21") === "df21" ? "X" : ""}
+${formData.get("df22") === "df22" ? "X" : ""}
+${formData.get("df23") === "df23" ? "X" : ""}
+${formData.get("df24") === "df24" ? "X" : ""}
+${formData.get("df25") === "df25" ? "X" : ""}
+${formData.get("df26") === "df26" ? "X" : ""}
+${formData.get("df27") === "df27" ? "X" : ""}
+${formData.get("df28") === "df28" ? "X" : ""}
+${formData.get("df29") === "df29" ? "X" : ""}
+${formData.get("df210") === "df210" ? "X" : ""}
+${formData.get("df211") === "df211" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]3[/b][/size]
+${formData.get("df31") === "df31" ? "X" : ""}
+${formData.get("df32") === "df32" ? "X" : ""}
+${formData.get("df33") === "df33" ? "X" : ""}
+${formData.get("df34") === "df34" ? "X" : ""}
+${formData.get("df35") === "df35" ? "X" : ""}
+${formData.get("df36") === "df36" ? "X" : ""}
+${formData.get("df37") === "df37" ? "X" : ""}
+${formData.get("df38") === "df38" ? "X" : ""}
+${formData.get("df39") === "df39" ? "X" : ""}
+${formData.get("df310") === "df310" ? "X" : ""}
+${formData.get("df311") === "df311" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎[size=75][b]ㅤㅤDİĞER FAKTÖRLER[/b][/size]
+‎ [b]A[/b] [size=65]SACK İHLALİ: ‎‎${formData.get("amadde")} CITED ${formData.get("dfa") === "dfa" ? "✓" : ""}[/size]
+‎ [b]B[/b] [size=65]SACK İHLALİ: ${formData.get("bmadde")} CITED ${formData.get("dfb") === "dfb" ? "✓" : ""}[/size]
+‎ [b]C[/b] [size=65]SACK İHLALİ: ${formData.get("cmadde")} CITED ${formData.get("dfc") === "dfc" ? "✓" : ""}[/size]
+‎ [b]D[/b] [size=65]GÖRÜŞ KAYBI[/size]
+‎ [b]E[/b] [size=65]DİKKATSİZLİK[/size]
+‎ [b]F[/b] [size=65]RAMPAYA GİRİŞ/ÇIKIŞ[/size]
+‎ [b]H[/b] [size=65]BAŞKA KAZA[/size]
+‎ [b]H[/b] [size=65]YOLU TANIMIYOR[/size]
+‎ [b]I[/b] [size=65]HASARLI ARAÇ  419 CITED ${formData.get("dfi") === "dfi" ? "✓" : ""}[/size]
+‎ [b]J[/b] [size=65]KAÇAK ARAÇ[/size]
+[/tdwidth]
+[/tr][/table]
+
+
+[/tdwidth]
+[/tr]
+[/table]
+
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[table=#d0dade,white][tr][tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]1[/b][/size]
+${formData.get("kom11") === "kom11" ? "X" : ""}
+${formData.get("kom12") === "kom12" ? "X" : ""}
+${formData.get("kom13") === "kom13" ? "X" : ""}
+${formData.get("kom14") === "kom14" ? "X" : ""}
+${formData.get("kom15") === "kom15" ? "X" : ""}
+${formData.get("kom16") === "kom16" ? "X" : ""}
+${formData.get("kom17") === "kom17" ? "X" : ""}
+${formData.get("kom18") === "kom18" ? "X" : ""}
+${formData.get("kom19") === "kom19" ? "X" : ""}
+${formData.get("kom110") === "kom110" ? "X" : ""}
+${formData.get("kom111") === "kom111" ? "X" : ""}
+${formData.get("kom112") === "kom112" ? "X" : ""}
+${formData.get("kom113") === "kom113" ? "X" : ""}
+${formData.get("kom114") === "kom114" ? "X" : ""}
+${formData.get("kom115") === "kom115" ? "X" : ""}
+${formData.get("kom116") === "kom116" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,0,0]‎[size=85][b]2[/b][/size]
+${formData.get("kom21") === "kom21" ? "X" : ""}
+${formData.get("kom22") === "kom22" ? "X" : ""}
+${formData.get("kom23") === "kom23" ? "X" : ""}
+${formData.get("kom24") === "kom24" ? "X" : ""}
+${formData.get("kom25") === "kom25" ? "X" : ""}
+${formData.get("kom26") === "kom26" ? "X" : ""}
+${formData.get("kom27") === "kom27" ? "X" : ""}
+${formData.get("kom28") === "kom28" ? "X" : ""}
+${formData.get("kom29") === "kom29" ? "X" : ""}
+${formData.get("kom210") === "kom210" ? "X" : ""}
+${formData.get("kom211") === "kom211" ? "X" : ""}
+${formData.get("kom212") === "kom212" ? "X" : ""}
+${formData.get("kom213") === "kom213" ? "X" : ""}
+${formData.get("kom214") === "kom214" ? "X" : ""}
+${formData.get("kom215") === "kom215" ? "X" : ""}
+${formData.get("kom216") === "kom216" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#F3F3F3,top,left,0,0]‎[size=85][b]3[/b][/size]
+${formData.get("kom31") === "kom31" ? "X" : ""}
+${formData.get("kom32") === "kom32" ? "X" : ""}
+${formData.get("kom33") === "kom33" ? "X" : ""}
+${formData.get("kom34") === "kom34" ? "X" : ""}
+${formData.get("kom35") === "kom35" ? "X" : ""}
+${formData.get("kom36") === "kom36" ? "X" : ""}
+${formData.get("kom37") === "kom37" ? "X" : ""}
+${formData.get("kom38") === "kom38" ? "X" : ""}
+${formData.get("kom39") === "kom39" ? "X" : ""}
+${formData.get("kom310") === "kom310" ? "X" : ""}
+${formData.get("kom311") === "kom311" ? "X" : ""}
+${formData.get("kom312") === "kom312" ? "X" : ""}
+${formData.get("kom313") === "kom313" ? "X" : ""}
+${formData.get("kom314") === "kom314" ? "X" : ""}
+${formData.get("kom315") === "kom315" ? "X" : ""}
+${formData.get("kom316") === "kom316" ? "X" : ""}
+[/tdwidth]
+[tdwidth=#ffffff,#ffffff,top,left,3,0]‎[size=75][b]ㅤㅤKAZA ÖNCESİ MANEVRA[/b][/size]
+‎ [b]A[/b] [size=65]DURDU[/size]
+‎ [b]B[/b] [size=65]DÜZ İLERLİYOR[/size]
+‎ [b]C[/b] [size=65]YOLDAN ÇIKTI[/size]
+‎ [b]D[/b] [size=65]SAĞA DÖNÜŞ[/size]
+‎ [b]E[/b] [size=65]SOLA DÖNÜŞ[/size]
+‎ [b]F[/b] [size=65]U DÖNÜŞÜ[/size]
+‎ [b]G[/b] [size=65]GERİ GERİ GİDİYOR[/size]
+‎ [b]H[/b] [size=65]YAVAŞLIYOR / DURUYOR[/size]
+‎ [b]I[/b] [size=65]DİĞER ARACI SOLLUYOR[/size]
+‎ [b]J[/b] [size=65]ŞERİT DEĞİŞTİRİYOR[/size]
+‎ [b]K[/b] [size=65]PARK MANEVRASI[/size]
+‎ [b]L[/b] [size=65]TRAFİĞE ÇIKIYOR[/size]
+‎ [b]M[/b] [size=65]YAYA GEÇİDİNİ GEÇİYOR[/size]
+‎ [b]N[/b] [size=65]PARK HALİNDE[/size]
+‎ [b]O[/b] [size=65]YOLA KATILIYOR[/size]
+‎ [b]P[/b] [size=65]TERS ŞERİTTE GİDİYOR[/size]
+[/tdwidth]
+[/tr][/table]
+
+
+[/tdwidth]
+[/tr]
+[/table]
+
+[/tdwidth]
+[/tr]
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,12,5]
+[size=70][b]ÇİZİM[/b][/size]
+[center][img]${formData.get("cizim")}[/img][/center]
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,8,5]
+[size=70][b]DİĞER[/b][/size]
+${formData.get("diger")}
+[/tdwidth]
+[/tr]
+[/table]
+
+
+
+
+      `
+
+      navigator.clipboard.writeText(BBCODE).then(() => alert("BBCode başarıyla kopyalandı!"))
+    })
+
+    function makeTextBold() {
+        const textarea = document.getElementById('textarea');
+
+        const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+
+        const newText = "[b]" + selectedText + "[/b]";
+
+        textarea.setRangeText(newText, textarea.selectionStart, textarea.selectionEnd, 'end');
+
+        textarea.setSelectionRange(
+            textarea.selectionStart + 3, 
+            textarea.selectionEnd + 3    
+        );
+    }
+
+    const html = document.getElementsByTagName('html')[0];
+    html.dataset.theme = localStorage.getItem("theme")
+    function toggleTheme() {
+      if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "dark")
+        html.dataset.theme = "dark"
+      } else {
+        const currentTheme = localStorage.getItem("theme")
+        if (currentTheme === "light") {
+          localStorage.setItem("theme", "dark")
+          html.dataset.theme = "dark";
+        }
+  
+        if (currentTheme === "dark") {
+          localStorage.setItem("theme", "light")
+          html.dataset.theme = "light"
+        }
+      }
+    }
+  </script>
+</body>
+</html>

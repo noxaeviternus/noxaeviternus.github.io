@@ -1,0 +1,494 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Damage Only</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    html {
+      transition: color 300ms, background-color 300ms !important;
+    }
+    html[data-theme='dark'] {
+      filter: invert(1) hue-rotate(180deg) !important;
+    }
+    .divide-wrapper div {
+      border-top: 2px solid #e2e2e2;
+    }
+	.checkbox {
+		width: 300px;
+		}
+	
+	#checkbox-group {
+	 columns: 3;
+     -webkit-columns: 3;
+     width: 100%;
+	 }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 800px;">
+      <h1 class="title" style="text-align: center;">SAHP 555 PAGE 1</h1>
+      <button type="button" class="button" style="width: 100%;" onclick="toggleTheme()">Dark Mode</button>
+      <br>
+      <br>
+      <form id="form">
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">KAZA BİLGİLERİ</h1>
+          <br>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">RAPOR NO</label>
+              <input class="input" type="text" placeholder="Text input" name="rapor_no">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">MEMUR SERI NO</label>
+              <input class="input" type="text" placeholder="Text input" name="seri_no">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ÖZEL KOŞULLAR</label>
+              <input class="input" type="text" placeholder="Text input" name="kosul_no">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">MIS. VUR VE KAÇ</label>
+				  <input style="justify-content: space-between;" type="checkbox" name="mvk" value="mvk">
+            </div>
+          </div>
+        </div>
+
+
+        <br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <h1 class="title is-4">KONUM</h1>
+          <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">KAZA KONUMU</label>
+              <input class="input" type="text" placeholder="Text input" name="kaza_konum">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">GÜN AY YIL</label>
+              <input class="input" type="text" placeholder="Text input" name="kaza_tarih">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">SAAT (2400)</label>
+              <input class="input" type="text" placeholder="Text input" name="kaza_saat">
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1><b>TARAF 1:</b></h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="st1" value="st1">
+                  SÜRÜCÜ
+                </label>
+                <label class="radio">
+                  <input type="radio" name="pt1" value="pt1">
+                  PARK EDİLMİŞ
+                </label>
+				<label class="radio">
+                  <input type="radio" name="bt1" value="bt1">
+                  BİSİKLET
+                </label>
+                <label class="radio">
+                  <input type="radio" name="dt1" value="dt1">
+                  DİĞER
+                </label>
+              </div>
+            </fieldset>
+          </div>
+		  <br>
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">İSİM</label>
+              <input class="input" type="text" placeholder="Text input" name="isimt1">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ADRES</label>
+              <input class="input" type="text" placeholder="Text input" name="adrest1">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">TELEFON NUMARASI</label>
+              <input class="input" type="text" placeholder="Text input" name="telt1">
+            </div>
+			<div class="field column">
+              <label class="label" style="font-size: 12px;">LİSANSI VAR/YOK</label>
+                  <input style="justify-content: space-between;" type="checkbox" name="sl1" value="sl1">
+				  <input style="justify-content: space-between;" type="checkbox" name="sly1" value="sly1">
+            </div>
+          </div>
+		  
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ARAÇ MARKA/MODEL</label>
+              <input class="input" type="text" placeholder="Text input" name="modelt1">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">PLAKA</label>
+              <input class="input" type="text" placeholder="Text input" name="plakat1">
+            </div>
+          </div>
+		  
+        </div>
+
+        <br>
+
+                <br>
+
+        <div style="border: 2px solid #e2e2e2; padding: 10px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1><b>TARAF 2:</b></h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="st2" value="st2">
+                  SÜRÜCÜ
+                </label>
+                <label class="radio">
+                  <input type="radio" name="pt2" value="pt2">
+                  PARK EDİLMİŞ
+                </label>
+				<label class="radio">
+                  <input type="radio" name="bt2" value="bt2">
+                  BİSİKLET
+                </label>
+                <label class="radio">
+                  <input type="radio" name="dt2" value="dt2">
+                  DİĞER
+                </label>
+              </div>
+            </fieldset>
+          </div>
+		  <br>
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">İSİM</label>
+              <input class="input" type="text" placeholder="Text input" name="isimt2">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ADRES</label>
+              <input class="input" type="text" placeholder="Text input" name="adrest2">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">TELEFON NUMARASI</label>
+              <input class="input" type="text" placeholder="Text input" name="telt2">
+            </div>
+			<div class="field column">
+              <label class="label" style="font-size: 12px;">LİSANSI VAR/YOK</label>
+                  <input style="justify-content: space-between;" type="checkbox" name="sl2" value="sl2">
+				  <input style="justify-content: space-between;" type="checkbox" name="sly2" value="sly2">
+            </div>
+          </div>
+		  
+		  <div class="columns">
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">ARAÇ MARKA/MODEL</label>
+              <input class="input" type="text" placeholder="Text input" name="modelt2">
+            </div>
+            <div class="field column">
+              <label class="label" style="font-size: 12px;">PLAKA</label>
+              <input class="input" type="text" placeholder="Text input" name="plakat2">
+            </div>
+          </div>
+        </div>
+		
+
+		<br>
+		
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">BBCode'u Kopyala</button>
+          </div>
+          <div class="control">
+            <button type="reset" class="button is-link is-light">Formu Temizle</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("form")
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault()
+      const formData = new FormData(this)
+      const BBCODE = `
+
+[size=85]STATE OF SAN ANDREAS[/size]
+[size=150][b]TRAFİK KAZASI RAPORU[/b][/size]
+[size=100]SAHP 555 Page 1 (Rev. 6-17) OPI 060[/size]
+[hr][/hr]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,2,5]
+[size=70][b]RAPOR NUMARASI[/b][/size]
+${formData.get("rapor_no")}
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,1,5]
+[size=70][b]SERİ NO[/b][/size]
+${formData.get("seri_no")}
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,1,5]
+[size=70][b]VUR&KAÇ[/b][/size]
+${formData.get("mvk") === "mvk" ? "X" : ""}
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,4,5]
+[size=70][b]KAZA KONUMU[/b][/size]
+${formData.get("kaza_konum")}
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,2,5]
+[size=70][b]GÜN AY YIL[/b][/size]
+${formData.get("kaza_tarih")}
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,1,5]
+[size=70][b]SAAT (2400)[/b][/size]
+${formData.get("kaza_saat")}
+
+[/tdwidth]
+
+[/tr]
+
+
+[/table]
+
+[br][/br]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,1,0]
+[center]
+[img]https://i.imgur.com/p7LIRAu.png[/img]
+[size=70]DRV
+[cb${formData.get("st1") === "st1" ? "c" : ""}]
+PRK
+[cb${formData.get("pt1") === "pt1" ? "c" : ""}]
+BCY
+[cb${formData.get("bt1") === "bt1" ? "c" : ""}]
+OTH
+[cb${formData.get("dt1") === "dt1" ? "c" : ""}]
+[/size]
+[/center]
+[/tdwidth]
+
+[tdwidth=#ffffff,#ffffff,top,left,18,0]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,6,5]
+[size=70][b]SÜRÜCÜ LİSANSI[/b][/size]
+${formData.get("sl1") === "sl1" ? "Var" : ""} ${formData.get("sly1") === "sly1" ? "Yok" : ""}
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,1,5]
+[size=70][b]EYALET[/b][/size]
+
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,1,5]
+[size=70][b]SINIF[/b][/size]
+C
+
+[/tdwidth]
+
+[/tr]
+
+
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]AD SOYAD[/b][/size]
+${formData.get("isimt1")}
+
+[/tdwidth]
+[/tr]
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]SOKAK ADRESİ[/b][/size]
+${formData.get("adrest1")}
+
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]TELEFON[/b][/size]
+${formData.get("telt1")}
+
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]MARKA/MODEL[/b][/size]
+${formData.get("modelt1")}
+
+[/tdwidth]
+[/tr]
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]PLAKA[/b][/size]
+${formData.get("plakat1")}
+
+[/tdwidth]
+[/tr]
+[/table]
+
+
+[/tdwidth]
+
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,1,0]
+[center]
+[img]https://i.imgur.com/MZZ1DkO.png[/img]
+[size=70]DRV
+[cb${formData.get("st2") === "st2" ? "c" : ""}]
+PRK
+[cb${formData.get("pt2") === "pt2" ? "c" : ""}]
+BCY
+[cb${formData.get("bt2") === "bt2" ? "c" : ""}]
+OTH
+[cb${formData.get("dt2") === "dt2" ? "c" : ""}]
+[/size]
+[/center]
+[/tdwidth]
+
+[tdwidth=#ffffff,#ffffff,top,left,18,0]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,6,5]
+[size=70][b]SÜRÜCÜ LİSANSI[/b][/size]
+${formData.get("sl2") === "sl2" ? "Var" : ""}${formData.get("sly2") === "sly2" ? "Yok" : ""}
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,1,5]
+[size=70][b]EYALET[/b][/size]
+
+
+[/tdwidth]
+
+[tdwidth=#767676,#ffffff,top,left,1,5]
+[size=70][b]SINIF[/b][/size]
+C
+
+[/tdwidth]
+
+[/tr]
+
+
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]AD SOYAD[/b][/size]
+${formData.get("isimt2")}
+
+[/tdwidth]
+[/tr]
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]SOKAK ADRESİ[/b][/size]
+${formData.get("adrest2")}
+
+[/tdwidth]
+[/tr]
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]TELEFON[/b][/size]
+${formData.get("telt2")}
+
+[/tdwidth]
+[/tr]
+[/table]
+
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]MARKA/MODEL[/b][/size]
+${formData.get("modelt2")}
+
+[/tdwidth]
+[/tr]
+[/table]
+[table=#d0dade,white][tr]
+[tdwidth=#767676,#ffffff,top,left,5,5]
+[size=70][b]PLAKA[/b][/size]
+${formData.get("plakat2")}
+
+[/tdwidth]
+[/tr]
+[/table]
+
+
+[/tdwidth]
+
+[/tr]
+[/table]
+
+
+      `
+
+      navigator.clipboard.writeText(BBCODE).then(() => alert("BBCode başarıyla kopyalandı!"))
+    })
+
+    function makeTextBold() {
+        const textarea = document.getElementById('textarea');
+
+        const selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+
+        const newText = "[b]" + selectedText + "[/b]";
+
+        textarea.setRangeText(newText, textarea.selectionStart, textarea.selectionEnd, 'end');
+
+        textarea.setSelectionRange(
+            textarea.selectionStart + 3, 
+            textarea.selectionEnd + 3    
+        );
+    }
+
+    const html = document.getElementsByTagName('html')[0];
+    html.dataset.theme = localStorage.getItem("theme")
+    function toggleTheme() {
+      if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "dark")
+        html.dataset.theme = "dark"
+      } else {
+        const currentTheme = localStorage.getItem("theme")
+        if (currentTheme === "light") {
+          localStorage.setItem("theme", "dark")
+          html.dataset.theme = "dark";
+        }
+  
+        if (currentTheme === "dark") {
+          localStorage.setItem("theme", "light")
+          html.dataset.theme = "light"
+        }
+      }
+    }
+  </script>
+</body>
+</html>
