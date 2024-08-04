@@ -529,6 +529,33 @@
               </div>
             </fieldset>
           </div>
+		<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h1>14. Search Warrant hazırlama:</h1>
+            <fieldset>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="soru_ondort" value="1">
+                  1
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_ondort" value="2">
+                  2
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_ondort" value="3">
+                  3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_ondort" value="N/O">
+                  N/O
+                </label>
+                <label class="radio">
+                  <input type="radio" name="soru_ondort" value="NRT">
+                  NRT
+                </label>
+              </div>
+            </fieldset>
+          </div>
 	   </div>
 
         <br>
@@ -629,6 +656,8 @@
         [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]12. Ceza Hukuk Bilgisi:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_oniki") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_oniki") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_oniki") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_oniki") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_oniki") === "NRT" ? "c" : ""}] NRT[/tdwidth]
   
         [tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]13. ((Karakter Derinliği)):[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_onuc") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_onuc") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_onuc") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_onuc") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_onuc") === "NRT" ? "c" : ""}] NRT[/tdwidth]
+
+	[tr][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][indent=7]14. Search Warrant hazırlama:[/indent][/tdwidth][tdwidth=#ffffff,#ffffff,left,left,4,1][size=85][cb${formData.get("soru_ondort") === "1" ? "c" : ""}] 1[color=#FFFFFF]_____[/color][cb${formData.get("soru_ondort") === "2" ? "c" : ""}] 2[color=#FFFFFF]_____[/color][cb${formData.get("soru_ondort") === "3" ? "c" : ""}]  3[color=#FFFFFF]_____[/color][cb${formData.get("soru_ondort") === "N/O" ? "c" : ""}]  N/O[color=#FFFFFF]_____[/color][cb${formData.get("soru_ondort") === "NRT" ? "c" : ""}] NRT[/tdwidth]
   
         [/table]
   
